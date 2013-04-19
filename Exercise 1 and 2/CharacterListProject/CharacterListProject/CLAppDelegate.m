@@ -7,7 +7,8 @@
 //
 
 #import "CLAppDelegate.h"
-#import "CLViewController.h"
+//#import "CLViewController.h"
+#import "TitlePageView.h"
 
 @implementation CLAppDelegate
 
@@ -16,10 +17,16 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    /*
     CLViewController *listViewController = [[CLViewController alloc] init];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listViewController];
+    */
     
+    TitlePageView *titlePage = [[TitlePageView alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:titlePage];
+
     [[self window] setRootViewController:navController];
     
     self.window.backgroundColor = [UIColor whiteColor];

@@ -26,6 +26,12 @@
 		10519CAA171E46DF00304C8C /* CLAccelerometerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10519CA8171E46DF00304C8C /* CLAccelerometerViewController.xib */; };
 		10569076171D2BE0001685EE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10569075171D2BE0001685EE /* MapKit.framework */; };
 		10569078171D2BEA001685EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10569077171D2BEA001685EE /* CoreLocation.framework */; };
+		105800C017211F2100DDD4E5 /* TitlePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 105800BE17211F2100DDD4E5 /* TitlePageView.m */; };
+		105800C117211F2100DDD4E5 /* TitlePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105800BF17211F2100DDD4E5 /* TitlePageView.xib */; };
+		105800C41721273400DDD4E5 /* tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 105800C21721273400DDD4E5 /* tile.png */; };
+		105800C51721273400DDD4E5 /* tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105800C31721273400DDD4E5 /* tile@2x.png */; };
+		105800C8172127DD00DDD4E5 /* TileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 105800C7172127DD00DDD4E5 /* TileView.m */; };
+		105800CB1721312700DDD4E5 /* TitlePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 105800CA1721312600DDD4E5 /* TitlePage.m */; };
 		105FE7181717AF4600673B6A /* CLJobPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FE7161717AF4600673B6A /* CLJobPickerViewController.m */; };
 		105FE7191717AF4600673B6A /* CLJobPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105FE7171717AF4600673B6A /* CLJobPickerViewController.xib */; };
 		109556551717D53A0066E95A /* iphone_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 109556541717D53A0066E95A /* iphone_bg.jpg */; };
@@ -66,6 +72,15 @@
 		10519CA8171E46DF00304C8C /* CLAccelerometerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLAccelerometerViewController.xib; sourceTree = "<group>"; };
 		10569075171D2BE0001685EE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		10569077171D2BEA001685EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		105800BD17211F2100DDD4E5 /* TitlePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlePageView.h; sourceTree = "<group>"; };
+		105800BE17211F2100DDD4E5 /* TitlePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlePageView.m; sourceTree = "<group>"; };
+		105800BF17211F2100DDD4E5 /* TitlePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitlePageView.xib; sourceTree = "<group>"; };
+		105800C21721273400DDD4E5 /* tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile.png; sourceTree = "<group>"; };
+		105800C31721273400DDD4E5 /* tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile@2x.png"; sourceTree = "<group>"; };
+		105800C6172127DD00DDD4E5 /* TileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileView.h; sourceTree = "<group>"; };
+		105800C7172127DD00DDD4E5 /* TileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileView.m; sourceTree = "<group>"; };
+		105800C91721312600DDD4E5 /* TitlePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlePage.h; sourceTree = "<group>"; };
+		105800CA1721312600DDD4E5 /* TitlePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlePage.m; sourceTree = "<group>"; };
 		105FE7151717AF4600673B6A /* CLJobPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLJobPickerViewController.h; sourceTree = "<group>"; };
 		105FE7161717AF4600673B6A /* CLJobPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLJobPickerViewController.m; sourceTree = "<group>"; };
 		105FE7171717AF4600673B6A /* CLJobPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLJobPickerViewController.xib; sourceTree = "<group>"; };
@@ -129,12 +144,48 @@
 			children = (
 				1003BA92171671CE006CD4FF /* CLAppDelegate.h */,
 				1003BA93171671CE006CD4FF /* CLAppDelegate.m */,
+				105800BC17211E7100DDD4E5 /* Title Page */,
+				105800BB1720FF9E00DDD4E5 /* Controllers */,
+				105800B91720FF5900DDD4E5 /* Model */,
+				1003BA8A171671CE006CD4FF /* Supporting Files */,
+			);
+			path = CharacterListProject;
+			sourceTree = "<group>";
+		};
+		1003BA8A171671CE006CD4FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				105800C21721273400DDD4E5 /* tile.png */,
+				105800C31721273400DDD4E5 /* tile@2x.png */,
+				109556561717D6580066E95A /* iphone_bg_wood.jpg */,
+				109556541717D53A0066E95A /* iphone_bg.jpg */,
+				1003BA8B171671CE006CD4FF /* CharacterListProject-Info.plist */,
+				1003BA8C171671CE006CD4FF /* InfoPlist.strings */,
+				1003BA8F171671CE006CD4FF /* main.m */,
+				1003BA91171671CE006CD4FF /* CharacterListProject-Prefix.pch */,
+				1003BA95171671CE006CD4FF /* Default.png */,
+				1003BA97171671CE006CD4FF /* Default@2x.png */,
+				1003BA99171671CE006CD4FF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		105800B91720FF5900DDD4E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				1003BAA017167320006CD4FF /* Character.h */,
 				1003BAA117167320006CD4FF /* Character.m */,
 				1003BAA317167B84006CD4FF /* CharacterList.h */,
 				1003BAA417167B84006CD4FF /* CharacterList.m */,
 				1003BAB617168B11006CD4FF /* CLImageStore.h */,
 				1003BAB717168B11006CD4FF /* CLImageStore.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		105800BB1720FF9E00DDD4E5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				1003BAA617167D5F006CD4FF /* CLViewController.h */,
 				1003BAA717167D5F006CD4FF /* CLViewController.m */,
 				10955658171800CE0066E95A /* WebViewController.h */,
@@ -152,25 +203,22 @@
 				105FE7151717AF4600673B6A /* CLJobPickerViewController.h */,
 				105FE7161717AF4600673B6A /* CLJobPickerViewController.m */,
 				105FE7171717AF4600673B6A /* CLJobPickerViewController.xib */,
-				1003BA8A171671CE006CD4FF /* Supporting Files */,
 			);
-			path = CharacterListProject;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
-		1003BA8A171671CE006CD4FF /* Supporting Files */ = {
+		105800BC17211E7100DDD4E5 /* Title Page */ = {
 			isa = PBXGroup;
 			children = (
-				109556561717D6580066E95A /* iphone_bg_wood.jpg */,
-				109556541717D53A0066E95A /* iphone_bg.jpg */,
-				1003BA8B171671CE006CD4FF /* CharacterListProject-Info.plist */,
-				1003BA8C171671CE006CD4FF /* InfoPlist.strings */,
-				1003BA8F171671CE006CD4FF /* main.m */,
-				1003BA91171671CE006CD4FF /* CharacterListProject-Prefix.pch */,
-				1003BA95171671CE006CD4FF /* Default.png */,
-				1003BA97171671CE006CD4FF /* Default@2x.png */,
-				1003BA99171671CE006CD4FF /* Default-568h@2x.png */,
+				105800C6172127DD00DDD4E5 /* TileView.h */,
+				105800C7172127DD00DDD4E5 /* TileView.m */,
+				105800C91721312600DDD4E5 /* TitlePage.h */,
+				105800CA1721312600DDD4E5 /* TitlePage.m */,
+				105800BD17211F2100DDD4E5 /* TitlePageView.h */,
+				105800BE17211F2100DDD4E5 /* TitlePageView.m */,
+				105800BF17211F2100DDD4E5 /* TitlePageView.xib */,
 			);
-			name = "Supporting Files";
+			name = "Title Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +284,9 @@
 				1095565C171800CE0066E95A /* WebViewController.xib in Resources */,
 				10EAB6A9171BF1DD007C43AD /* CLActionViewController.xib in Resources */,
 				10519CAA171E46DF00304C8C /* CLAccelerometerViewController.xib in Resources */,
+				105800C117211F2100DDD4E5 /* TitlePageView.xib in Resources */,
+				105800C41721273400DDD4E5 /* tile.png in Resources */,
+				105800C51721273400DDD4E5 /* tile@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +308,9 @@
 				1095565B171800CE0066E95A /* WebViewController.m in Sources */,
 				10EAB6A8171BF1DD007C43AD /* CLActionViewController.m in Sources */,
 				10519CA9171E46DF00304C8C /* CLAccelerometerViewController.m in Sources */,
+				105800C017211F2100DDD4E5 /* TitlePageView.m in Sources */,
+				105800C8172127DD00DDD4E5 /* TileView.m in Sources */,
+				105800CB1721312700DDD4E5 /* TitlePage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -144,13 +144,13 @@
 
 - (IBAction)takePicture:(id)sender
 {
-    
+    /*
     if([imagePickerPopover isPopoverVisible]){
         [imagePickerPopover dismissPopoverAnimated:YES];
         imagePickerPopover = nil;
         return;
     }
-    
+    */
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
@@ -163,8 +163,8 @@
     
     
     //Place image picker on screen
-    //[self presentViewController:imagePicker animated:YES completion:nil];
-    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+   /*
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad){
         imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
         
@@ -174,7 +174,7 @@
                                                    animated:YES];
     }else{
         [self presentViewController:imagePicker animated:YES completion:nil];
-    }
+    }*/
 }
 
 - (IBAction)editMode:(UISwitch *)sender
@@ -221,8 +221,6 @@
         [IDNumberField setBackgroundColor:[UIColor clearColor]];
         
         [selectClassButton setEnabled:NO];
-        //[valueField setEnabled:NO];
-        //[valueField setBorderStyle:UITextBorderStyleNone];
         
         [charStrength setEnabled:NO];
         [charDexterity setEnabled:NO];
@@ -260,13 +258,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     
     [imageView setImage:image];
     
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
+    [self dismissViewControllerAnimated:YES completion:nil];
+    /*if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone){
         [self dismissViewControllerAnimated:YES completion:nil];
     }else{
         [imagePickerPopover dismissPopoverAnimated:YES];
         imagePickerPopover = nil;
-    }
+    }*/
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *) textField
@@ -292,7 +290,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     NSLog(@"User dismissed popover");
-    imagePickerPopover = nil;
+    //imagePickerPopover = nil;
 }
 
 /*

@@ -26,7 +26,7 @@
 +(id)randomChar
 {
     NSArray *randomAdjectiveList = [NSArray arrayWithObjects:@"Elwyn",@"Rusty",@"Raven", @"Devin", @"Zac", nil];
-    NSArray *randomNounList = [NSArray arrayWithObjects:@"Reed",@"Amber",@"Stone", nil];
+    NSArray *randomNounList = [NSArray arrayWithObjects:@"Reed",@"Amber",@"Stone", @"Titania", nil];
     
     NSInteger adjectiveIndex = rand() % [randomAdjectiveList count];
     NSInteger nounIndex = rand() % [randomNounList count];
