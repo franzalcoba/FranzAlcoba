@@ -24,7 +24,8 @@
     NSAssert(cryptoDict, @"level config file not found");
     
     // create Cryptogram instance
-    Cryptogram* crypto = [[Cryptogram alloc] init];
+    // add autorelease
+    Cryptogram* crypto = [[[Cryptogram alloc] init] autorelease];
     crypto.author = cryptoDict[@"cryptograms"][index][0];
     crypto.cryptogram = cryptoDict[@"cryptograms"][index][1];
     
