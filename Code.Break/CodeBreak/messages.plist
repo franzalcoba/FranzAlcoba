@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>cryptograms</key>
+	<array>
+		<array>
+			<string>Che Guevarra</string>
+			<string>THE REVOLUTION IS NOT AN APPLE THAT FALLS WHEN IT IS RIPE. YOU HAVE TO MAKE IT FALL.</string>
+		</array>
+		<array>
+			<string>Albert Einstein</string>
+			<string>ONLY A LIFE LIVED FOR OTHERS IS A LIFE WORTHWHILE.</string>
+		</array>
+	</array>
+</dict>
+</plist>
