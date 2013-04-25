@@ -26,7 +26,8 @@
 
 
 //factory method to load a .plist file and initialize the model
-+(instancetype)cryptoMessageWithNumber:(int) index;
+//+(instancetype)cryptoMessageWithNumber:(int) index;
+- (id) initWithCryptoNumber:(int)index;
 
 //functions for message encryption
 - (void) setEncryptionKeys;
@@ -34,5 +35,6 @@
 
 //function for checking if a character is a letter
 - (BOOL)characterIsLetter: (NSString *) aChar;
+- (BOOL)characterIsSpace: (NSString *) aChar;
 
 @end

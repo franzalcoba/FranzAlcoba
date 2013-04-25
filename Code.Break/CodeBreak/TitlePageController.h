@@ -13,5 +13,6 @@
     
 }
 - (IBAction)enterMenu:(id)sender;
+- (IBAction)enterHowTo:(id)sender;
 
 @end

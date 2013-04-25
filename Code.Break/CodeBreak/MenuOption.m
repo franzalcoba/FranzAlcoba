@@ -16,11 +16,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //Set button image
-        UIImage *btn = [UIImage imageNamed:@"play.png"];
-        [self setBackgroundImage:btn forState:UIControlStateNormal];
-        [btn release];
-        
         //Set button size
         frame.size = CGSizeMake(50.0, 50.0);
     }
@@ -30,10 +25,9 @@
 - (void)setAsSolved:(BOOL) won
 {
     if(won){
+        [self setBackgroundImage:nil forState:UIControlStateNormal];
         UIImage *btn = [UIImage imageNamed:@"message_unlocked.png"];
         [self setBackgroundImage:btn forState:UIControlStateNormal];
-        [btn release];
-
         [self setTintColor:[UIColor greenColor]];
     }
     return;

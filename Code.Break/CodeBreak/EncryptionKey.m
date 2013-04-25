@@ -7,6 +7,7 @@
 //
 
 #import "EncryptionKey.h"
+
 @implementation EncryptionKey
 
 - (id)initWithFrame:(CGRect)frame
@@ -25,7 +26,11 @@
     }
     return self;
 }
-
+/*
+- (void)setAnswerKey: (AnswerKey *)answerKey
+{
+    ansKey = answerKey;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

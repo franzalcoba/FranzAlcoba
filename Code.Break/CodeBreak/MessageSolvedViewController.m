@@ -70,22 +70,17 @@
 
 - (void)showMessage
 {
-    Cryptogram *cryptogramPuzzle = [Cryptogram cryptoMessageWithNumber:messageNumber];
+    Cryptogram *cryptogramPuzzle = [[[Cryptogram alloc] initWithCryptoNumber:messageNumber] autorelease];//[Cryptogram cryptoMessageWithNumber:messageNumber];
     [messageQuote setText:[cryptogramPuzzle cryptogram]];
     [messageAuthor setText:[cryptogramPuzzle author]];
     [timeSolved setText:[self formatTimeSolved]];
     
-    [cryptogramPuzzle release];
-    [cryptogramPuzzle dealloc];
+    cryptogramPuzzle = nil;
 }
 
 - (IBAction)backMenu:(UIButton *)sender
 {
     [[self navigationController] popViewControllerAnimated:YES];
-    [messageQuote release];
-    [messageAuthor release];
-    [timeSolved release];
-    [[self view] release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,9 +99,6 @@
 
 - (void)dealloc
 {
-    [messageQuote release];
-    [messageAuthor release];
-    [timeSolved release];
     [super dealloc];
 }
 @end

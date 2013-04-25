@@ -53,7 +53,6 @@
     float _y = 25.0;
     int counter = 1;
 
-   
     // Get the stored data before the view loads
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -70,14 +69,16 @@
             
             MenuOption *btn = [[MenuOption alloc] initWithFrame:CGRectMake(_x, _y, 50,50)];
             [btn setTag:counter++];
-            
+            [btn setBackgroundImage:nil forState:UIControlStateNormal];
             if(game_status){
                 [btn setAsSolved: game_status];
                 [btn addTarget:self action:@selector(showDecryptedMessage:)  forControlEvents:UIControlEventTouchUpInside];
             }else{
+                //Set button image
+                UIImage *btnImage = [UIImage imageNamed:@"play.png"];
+                [btn setBackgroundImage:btnImage forState:UIControlStateNormal];
                 [btn addTarget:self action:@selector(startGame:)  forControlEvents:UIControlEventTouchUpInside];
             }
-            
             [[self view] addSubview:btn];
             [btn release];
             _x += 55;

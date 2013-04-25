@@ -16,7 +16,7 @@
     if (self) {
         // Initialization code
         //[self setFont:]
-        [self setTextColor:[UIColor grayColor]];
+        [self setTextColor:[UIColor redColor]];
         [self setBackgroundColor:[UIColor clearColor]];
     }
     return self;

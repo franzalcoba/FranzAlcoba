@@ -74,7 +74,7 @@
     [background release];
     
     //RETRIEVE MESSAGE AND ENCRYPT - CREATE CRYPTOGRAM
-    cryptogramPuzzle = [Cryptogram cryptoMessageWithNumber:messageNumber];
+    cryptogramPuzzle = [[Cryptogram alloc] initWithCryptoNumber:messageNumber]; //[Cryptogram cryptoMessageWithNumber:messageNumber];
     [cryptogramPuzzle setEncryptionKeys];
     
     //SET INITIAL KEY ANSWERS TO AN EMPTY STRING
@@ -84,7 +84,7 @@
     }
     
     //DISPLAY ALL VIEWS
-    [self displayDecryptionKeyScrollView];
+    [self displayDecryptionKeys];
     [self displayCryptogram];
     [self displayCharacterSelection];
 }
@@ -111,7 +111,7 @@
 }
 
 // DISPLAY VIEW for PLAYER'S DECRYPTION KEY ANSWER
-- (void)displayDecryptionKeyScrollView
+- (void)displayDecryptionKeys
 {
     //SETUP SCROLL VIEW
     float scrollViewWidth = 103.0;
@@ -138,8 +138,7 @@
     
     for(NSString *c in sortedKeys)
     {
-
-        DisplayKeys *dk = [[DisplayKeys alloc] init];
+        DisplayKeys *dk = [[[DisplayKeys alloc] init] autorelease];
         [displayKeys setValue:dk forKey:c];
         
         EncryptionKey *displayedKey = [[EncryptionKey alloc] initWithFrame:CGRectMake(offset_x, offset_y, answerButtonSize, answerButtonSize)];
@@ -159,8 +158,8 @@
         offset_x = 10;
         offset_y += answerButtonSize + 5;
         
-        //[displayedKey release];
-        //[answerButton release];
+        [displayedKey release];
+        [answerButton release];
     }
     
     [decryptionKeyScrollView setContentSize:CGSizeMake(decryptionKeyScrollView.bounds.size.width -10, offset_y)];
@@ -175,71 +174,137 @@
 
 -(void) displayCryptogram
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSMutableDictionary *charSet = [cryptogramPuzzle characterSet];
     
     NSString *message = [cryptogramPuzzle cryptogram];
-    
     int message_length = [message length];
 
     float offset_x = 20;
-    float offset_y = 50;
+    float offset_y = 10;
     
+    //SETUP VIEW CONTAINERS
+    UIScrollView *displayCryptoScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,30, displayCryptogramView.bounds.size.width, displayCryptogramView.bounds.size.height)];
+    
+    UIView *cryptogramView = [[UIView alloc] initWithFrame:CGRectMake(0,0, displayCryptogramView.bounds.size.width, displayCryptogramView.bounds.size.height)];
+
+    const int maxChars = 14;
+    
+    //create an array of words
+    NSMutableArray *wordsArray = [[NSMutableArray alloc] init];
+    NSString *aWord = [[NSString alloc] init];
     for(int i = 0; i < message_length; i++)
     {
-        NSString *c = [NSString stringWithFormat:@"%c",[message characterAtIndex:i]];
-        //print encryption for letters
-        if([cryptogramPuzzle characterIsLetter:c])
-        {
-            //CRYPTOGRAM LABEL
-            UILabel *charLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset_x, offset_y, 13, 13)];
-            [charLabel setBackgroundColor:[UIColor clearColor]];
-            [charLabel setText:[charSet valueForKey:c]];
-            [displayCryptogramView addSubview:charLabel];
-            
-            //CRYPTOGRAM ANSWER
-            CryptoCharacter *aChar = [[[CryptoCharacter alloc] initWithFrame:CGRectMake(offset_x, offset_y+15, 13, 13)] autorelease];
-            [aChar setText:@""];
-            [displayCryptogramView addSubview:aChar];
-            
-            [charLabel release];
-            [aChar release];
-            
-            //add to array
-            [[displayKeys objectForKey:[charSet valueForKey:c]] addCryptoCharacter:aChar];
-        }
-        else //print character as it is
-        {
-            //CRYPTOGRAM LABEL
-            UILabel *charLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset_x, offset_y, 13, 13)];
-            [charLabel setBackgroundColor:[UIColor clearColor]];
-            [charLabel setText:c];
-            [displayCryptogramView addSubview:charLabel];
-            
-            //CRYPTOGRAM ANSWER
-            CryptoCharacter *aChar = [[CryptoCharacter alloc] initWithFrame:CGRectMake(offset_x, offset_y+15, 13, 13)];
-            [aChar setText:c];
-            [displayCryptogramView addSubview:aChar];
-            
-            [charLabel release];
-            [aChar release];
+        if(!([message characterAtIndex:i] == 32)){
+            aWord = [NSString stringWithFormat:@"%@%c", aWord, [message characterAtIndex:i]];
+        }else{
+            [wordsArray addObject: aWord];
+            aWord = @"";
+            continue;
         }
         
-        offset_x += 20;
+        if(i == message_length-1){
+            [wordsArray addObject: aWord];
+            aWord = nil;
+        }
+    }
+    [aWord release];
+    
+    int word_length = 0;
+    int charsLeft = maxChars;
+    
+    //PRINT WORDS one by one
+    for (int j = 0; j < [wordsArray count]; j++) {
+        //number of characters in the word
+        word_length = [[wordsArray objectAtIndex:j] length]; 
         
-        if(offset_x >= 350)//displayCryptogram.bounds.size.width)
-        {
+        //Word exceeds the screen, go to NEXT LINE
+        if(charsLeft < word_length){
+            charsLeft = maxChars; //reset characters left
             offset_x = 20;
             offset_y += 50;
         }
+        
+        //Word fits on screen, PRINT WORD per character
+        if(word_length <= charsLeft){
+            for(int k = 0; k < word_length; k++)
+            {
+                NSString *c = [NSString stringWithFormat:@"%c",[[wordsArray objectAtIndex:j] characterAtIndex:k]];
+                if([cryptogramPuzzle characterIsLetter:c])
+                {
+                    
+                    //CRYPTOGRAM ANSWER
+                    CryptoCharacter *aChar = [[CryptoCharacter alloc] initWithFrame:CGRectMake(offset_x, offset_y, 20, 15)];
+                    [aChar setText:@""];
+                    [cryptogramView addSubview:aChar];
+                    
+                    //add to array
+                    [[displayKeys objectForKey:[charSet valueForKey:c]] addCryptoCharacter:aChar];
+                    [aChar release];
+                    
+                    //CRYPTOGRAM LABEL
+                    UILabel *charLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset_x, offset_y+15, 20, 15)];
+                    [charLabel setBackgroundColor:[UIColor clearColor]];
+                    [charLabel setText:[charSet valueForKey:c]];
+                    [cryptogramView addSubview:charLabel];
+                    [charLabel release];
+                    
+                    
+                }
+                else //print character as it is
+                {
+                    //CRYPTOGRAM ANSWER
+                    CryptoCharacter *aChar = [[CryptoCharacter alloc] initWithFrame:CGRectMake(offset_x, offset_y, 20, 15)];
+                    [aChar setText:c];
+                    [cryptogramView addSubview:aChar];
+                    [aChar release];
+                    
+                    //CRYPTOGRAM LABEL
+                    UILabel *charLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset_x, offset_y+15, 20, 15)];
+                    [charLabel setBackgroundColor:[UIColor clearColor]];
+                    [charLabel setText:c];
+                    [cryptogramView addSubview:charLabel];
+                    [charLabel release];
+                }
+                offset_x += 20;
+            }//end printing of a word
+            
+            //PRINT SPACE after every word.
+            
+            
+            
+            //CRYPTOGRAM ANSWER
+            CryptoCharacter *aChar = [[CryptoCharacter alloc] initWithFrame:CGRectMake(offset_x, offset_y, 20, 15)];
+            [aChar setText:@" "];
+            [cryptogramView addSubview:aChar];
+            [aChar release];
+            
+            //CRYPTOGRAM LABEL
+            UILabel *charLabel = [[UILabel alloc] initWithFrame:CGRectMake(offset_x, offset_y+15, 20, 15)];
+            [charLabel setBackgroundColor:[UIColor clearColor]];
+            [charLabel setText:@" "];
+            [cryptogramView addSubview:charLabel];
+            [charLabel release];
+            
+            offset_x += 20;
+            
+            charsLeft -= word_length;
+            NSLog(@"%@ : %d", [wordsArray objectAtIndex:j], charsLeft);
+        }
     }
-    [pool release];
+    [wordsArray release];
+    
+    [displayCryptoScrollView setContentSize:CGSizeMake(decryptionKeyScrollView.bounds.size.width, offset_y + 100)];
+    [displayCryptoScrollView addSubview:cryptogramView];
+    
+    [displayCryptogramView addSubview:displayCryptoScrollView];
+    
+    [cryptogramView release];
+    [displayCryptoScrollView release];
 }
-
 
 - (void)displayCharacterSelection
 {
-    //Create the view for the selection of letters 
+    //Create the view for the selection of letters
     characterSelection = [[UIScrollView alloc]
                           initWithFrame:
                           CGRectMake(0, displayCryptogramView.bounds.size.height-50.0f, self.view.bounds.size.width, 100.0f)];
@@ -262,9 +327,9 @@
         [tagButton setKeyCharacter:character];
         
         [tagButton setTitle:character forState:UIControlStateNormal];
-        //[tagButton setTitle:character forState:UIControlStateHighlighted];
-        //[tagButton setTitle:character forState:UIControlStateSelected];
-        //[tagButton setTitle:character forState:UIControlStateDisabled];
+        [tagButton setTitle:character forState:UIControlStateHighlighted];
+        [tagButton setTitle:character forState:UIControlStateSelected];
+        [tagButton setTitle:character forState:UIControlStateDisabled];
         
         [tagButton addTarget:self action:@selector(answerKeySelected:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -272,7 +337,7 @@
         [keyChoices setValue:tagButton forKey:character];
         
         //add the button to the scroll view
-        [characterSelection addSubview:tagButton];
+        [characterSelection addSubview:[keyChoices objectForKey:character]];
         
         [tagButton release];
         
@@ -295,8 +360,12 @@
 - (void)answerKeySelected: (KeySelectionButton *)sender
 {
     selectedScrollViewKey = sender;
-    
+
     if(sender.isEnabled){
+        [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
+        UIImage *btn = [UIImage imageNamed:@"32.png"];
+        [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
+
         selectedAnswerKey.answer = sender.titleLabel.text;
         NSLog(@"Answer: %@ = %@", selectedAnswerKey.answerForKey, selectedAnswerKey.answer);
 
@@ -308,7 +377,6 @@
         [self disableUsedKeys];
     }
     
-    // check if the last key entered decoded the message
     if ([self checkAnswers])
     {
         [self cryptogramSolved];
@@ -340,11 +408,12 @@
 
 - (IBAction)backMenu:(UIButton *)sender
 {
-    [[self navigationController] popViewControllerAnimated:YES];
+    [[self navigationController] popViewControllerAnimated:NO];
 }
 
 - (BOOL)checkAnswers
 {
+    //answerKeys SHOULD be equal to cryptogram
     BOOL bWinFlag = YES;
 
     //reverse player answers
@@ -354,7 +423,6 @@
         [cryptogramAnswers setValue:s forKey:[[cryptogramPuzzle characterSet] objectForKey:s]];
     }
 
-    //answerKeys SHOULD be equal to cryptogram
     for(NSString *key in [answerKeys allKeys])
     {
         if(![[answerKeys objectForKey:key] isEqualToString:[cryptogramAnswers objectForKey:key]])
@@ -381,8 +449,9 @@
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];
     [message show];
-    [message release];
     game_status = YES;
+    [self save:nil];
+    [self backMenu:nil];
 }
 
 - (void)didReceiveMemoryWarning

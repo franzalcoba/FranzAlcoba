@@ -28,7 +28,16 @@
     }
     return self;
 }
+/*
+- (void)setEncryptedKey: (EncryptionKey *)encryptedKey
+{
+    encKey = encryptedKey;
+}
 
+- (void)highlightKey
+{
+    [encKey setBackgroundColor:[UIColor blueColor]];
+}
 /*
 // Only override drawRect: if you perfosrm custom drawing.
 // An empty implementation adversely affects performance during animation.

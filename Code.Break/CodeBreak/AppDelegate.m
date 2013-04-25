@@ -23,8 +23,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    TitlePageController *titlePage = [[TitlePageController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:titlePage];
+    TitlePageController *titlePage = [[[TitlePageController alloc] init] autorelease];
+    UINavigationController *navController = [[[UINavigationController alloc] initWithRootViewController:titlePage] autorelease];
     [[self window] setRootViewController:navController];
     
     [self.window makeKeyAndVisible];

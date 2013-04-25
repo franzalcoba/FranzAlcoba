@@ -9,8 +9,9 @@
 #import "Cryptogram.h"
 
 @implementation Cryptogram
-@synthesize characterSet;
+@synthesize characterSet, author, cryptogram;
 
+/*
 +(instancetype)cryptoMessageWithNumber:(int)index
 {
     // find .plist file
@@ -25,14 +26,38 @@
     
     // create Cryptogram instance
     // add autorelease
-    Cryptogram* crypto = [[[Cryptogram alloc] init] autorelease];
+    Cryptogram* crypto = [[Cryptogram alloc] init];
     crypto.author = cryptoDict[@"cryptograms"][index][0];
     crypto.cryptogram = cryptoDict[@"cryptograms"][index][1];
 
     fileName = nil;
     messagePath = nil;
-    [cryptoDict release];
+    cryptoDict = nil;
     return crypto;
+}
+*/
+- (id) initWithCryptoNumber:(int)index
+{
+    // find .plist file
+    NSString* fileName = @"messages.plist";
+    NSString* messagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fileName];
+    
+    // load .plist file
+    NSDictionary* cryptoDict = [NSDictionary dictionaryWithContentsOfFile:messagePath];
+    
+    // validation
+    NSAssert(cryptoDict, @"level config file not found");
+    
+    // create Cryptogram instance
+    // add autorelease
+    [self setAuthor: cryptoDict[@"cryptograms"][index][0]];
+    [self setCryptogram: cryptoDict[@"cryptograms"][index][1]];
+    
+    fileName = nil;
+    messagePath = nil;
+    cryptoDict = nil;
+    
+    return self;
 }
 
 -(void) setEncryptionKeys
@@ -78,9 +103,14 @@
     return (x >= 65 && x <= 90);
 }
 
+- (BOOL)characterIsSpace: (NSString *) aChar
+{
+    int x = (int)[aChar characterAtIndex:0] ;
+    return (x == 32);
+}
+
 -(void) dealloc
 {
-    [keyCharacters release];
     [characterSet release];
     [super dealloc];
 }

@@ -36,7 +36,7 @@
 
 - (NSString *)description
 {
-    NSString *todisplay = [[NSString alloc] init];
+    NSString *todisplay = [[[NSString alloc] init] autorelease];
     for (CryptoCharacter *cryptoChar in displayLabels) {
         [todisplay stringByAppendingString:[NSString stringWithFormat:@"%@ ", cryptoChar.text]];
     }
