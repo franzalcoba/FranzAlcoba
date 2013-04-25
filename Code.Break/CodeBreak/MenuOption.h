@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+    This button is used in the menu page
+    for selecting a puzzle.
+ */
+
 @interface MenuOption : UIButton
+
+- (void)setAsSolved:(BOOL)won;
 
 @end

@@ -28,11 +28,16 @@
 {
     [super viewDidLoad];
     
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"paper_background_1680x1050.jpg"] ];
-    [[self view] setBackgroundColor:background];
-    
+   UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"paper_background_1680x1050.jpg"] ];
+   [[self view] setBackgroundColor:background];
+   [background release];
+    // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:NO];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,4 +50,15 @@
     MenuController *menu = [[MenuController alloc] init];
     [[self navigationController] pushViewController:menu animated:NO];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
 @end

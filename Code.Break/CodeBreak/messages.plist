@@ -4,6 +4,35 @@
 <dict>
 	<key>cryptograms</key>
 	<array>
+		<string></string>
+		<array>
+			<string>Me</string>
+			<string>HELLO!</string>
+		</array>
+		<array>
+			<string>Isaac Asimov</string>
+			<string>LIFE IS PLEASANT. DEATH IS PEACEFUL. IT&apos;S THE TRANSITION THAT&apos;S TROUBLESOME.</string>
+		</array>
+		<array>
+			<string>Jeanne Moreau</string>
+			<string>THERE ARE NEVER TEN WAYS TO DO SOMETHING, ONLY ONE. THAT IS A QUESTION ON MORALITY.</string>
+		</array>
+		<array>
+			<string>George Gordon Byron</string>
+			<string>ONE OF THE PLEASURES OF READING OLD LETTERS IS THE KNOWLEDGE THAT THEY NEED NO ANSWER.</string>
+		</array>
+		<array>
+			<string>Aristotle Onassis</string>
+			<string>IF WOMEN DIDN&apos;T EXIST, ALL THE MONEY IN THE WORLD WOULD HAVE NO MEANING.</string>
+		</array>
+		<array>
+			<string>Kenny Loggins</string>
+			<string>WE ALL LONG FOR LOVE. WHETHER WE KNOW IT OR NOT, EVERYTHING ELSE WE DO IS JUST KILLING TIME.</string>
+		</array>
+		<array>
+			<string>Charles Osgood</string>
+			<string>EVEN IN ONE&apos;S OWN AREA OF EXPERTISE, THE LONGER YOU STUDY AND SPECIALIZE, THE MORE YOU KNOW ABOUT LESS AND LESS.</string>
+		</array>
 		<array>
 			<string>Che Guevarra</string>
 			<string>THE REVOLUTION IS NOT AN APPLE THAT FALLS WHEN IT IS RIPE. YOU HAVE TO MAKE IT FALL.</string>

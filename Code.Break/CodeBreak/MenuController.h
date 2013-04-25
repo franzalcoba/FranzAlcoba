@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuOption.h"
 
 @interface MenuController : UIViewController
 {
     
 }
--(void) showPuzzleMenu;
+
+- (void)showPuzzleMenu;
+- (IBAction)startGame: (MenuOption *)sender;
+- (IBAction)showDecryptedMessage: (MenuOption *)sender;
 
 @end

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1041B8FC17261B4A007BA914 /* CryptoCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1041B8FB17261B4A007BA914 /* CryptoCharacter.m */; };
+		1041B8FF1726323E007BA914 /* EncryptionKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 1041B8FE1726323E007BA914 /* EncryptionKey.m */; };
+		104CF1131727BE3A002ECED1 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 104CF1121727BE3A002ECED1 /* play.png */; };
+		104CF1211727BFDB002ECED1 /* MessageSolvedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 104CF11F1727BFDB002ECED1 /* MessageSolvedViewController.m */; };
+		104CF1221727BFDB002ECED1 /* MessageSolvedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104CF1201727BFDB002ECED1 /* MessageSolvedViewController.xib */; };
+		104CF1261727C844002ECED1 /* message_unlocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 104CF1251727C844002ECED1 /* message_unlocked.png */; };
 		105F9EB21724C9AE00CCD307 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB11724C9AE00CCD307 /* UIKit.framework */; };
 		105F9EB41724C9AE00CCD307 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB31724C9AE00CCD307 /* Foundation.framework */; };
 		105F9EB61724C9AE00CCD307 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB51724C9AE00CCD307 /* CoreGraphics.framework */; };
@@ -25,15 +30,25 @@
 		105F9EE41724DA7C00CCD307 /* paper_background_1680x1050.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EE31724DA7C00CCD307 /* paper_background_1680x1050.jpg */; };
 		105F9EE61724DD8F00CCD307 /* TitlePageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EE51724DD8F00CCD307 /* TitlePageController.xib */; };
 		105F9EE917250AED00CCD307 /* MenuOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 105F9EE817250AED00CCD307 /* MenuOption.m */; };
-		105F9EEB17250CA300CCD307 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EEA17250CA300CCD307 /* lock.png */; };
-		105F9EED172540CB00CCD307 /* game_bg_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EEC172540CB00CCD307 /* game_bg_0.jpg */; };
 		105F9EEF172541EC00CCD307 /* GameController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EEE172541EC00CCD307 /* GameController.xib */; };
 		105F9EF117254B1D00CCD307 /* game_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EF017254B1D00CCD307 /* game_bg.jpg */; };
+		10B60AB2172658460002F3A9 /* black_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B60AB1172658460002F3A9 /* black_button.png */; };
+		10B60AB417265F990002F3A9 /* iphone_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10B60AB317265F990002F3A9 /* iphone_bg.jpg */; };
+		10B60AB7172662580002F3A9 /* AnswerKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B60AB6172662580002F3A9 /* AnswerKey.m */; };
+		10B60ABA172666EE0002F3A9 /* KeySelectionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B60AB9172666EE0002F3A9 /* KeySelectionButton.m */; };
+		10B60ABD172677410002F3A9 /* DisplayKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B60ABC172677410002F3A9 /* DisplayKeys.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1041B8FA17261B4A007BA914 /* CryptoCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptoCharacter.h; sourceTree = "<group>"; };
 		1041B8FB17261B4A007BA914 /* CryptoCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptoCharacter.m; sourceTree = "<group>"; };
+		1041B8FD1726323E007BA914 /* EncryptionKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionKey.h; sourceTree = "<group>"; };
+		1041B8FE1726323E007BA914 /* EncryptionKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionKey.m; sourceTree = "<group>"; };
+		104CF1121727BE3A002ECED1 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		104CF11E1727BFDB002ECED1 /* MessageSolvedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSolvedViewController.h; sourceTree = "<group>"; };
+		104CF11F1727BFDB002ECED1 /* MessageSolvedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSolvedViewController.m; sourceTree = "<group>"; };
+		104CF1201727BFDB002ECED1 /* MessageSolvedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageSolvedViewController.xib; sourceTree = "<group>"; };
+		104CF1251727C844002ECED1 /* message_unlocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message_unlocked.png; sourceTree = "<group>"; };
 		105F9EAE1724C9AE00CCD307 /* CodeBreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105F9EB11724C9AE00CCD307 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		105F9EB31724C9AE00CCD307 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,10 +75,16 @@
 		105F9EE51724DD8F00CCD307 /* TitlePageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitlePageController.xib; sourceTree = "<group>"; };
 		105F9EE717250AED00CCD307 /* MenuOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOption.h; sourceTree = "<group>"; };
 		105F9EE817250AED00CCD307 /* MenuOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOption.m; sourceTree = "<group>"; };
-		105F9EEA17250CA300CCD307 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
-		105F9EEC172540CB00CCD307 /* game_bg_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_bg_0.jpg; sourceTree = "<group>"; };
 		105F9EEE172541EC00CCD307 /* GameController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameController.xib; sourceTree = "<group>"; };
 		105F9EF017254B1D00CCD307 /* game_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game_bg.jpg; sourceTree = "<group>"; };
+		10B60AB1172658460002F3A9 /* black_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_button.png; sourceTree = "<group>"; };
+		10B60AB317265F990002F3A9 /* iphone_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone_bg.jpg; sourceTree = "<group>"; };
+		10B60AB5172662580002F3A9 /* AnswerKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerKey.h; sourceTree = "<group>"; };
+		10B60AB6172662580002F3A9 /* AnswerKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerKey.m; sourceTree = "<group>"; };
+		10B60AB8172666EE0002F3A9 /* KeySelectionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeySelectionButton.h; sourceTree = "<group>"; };
+		10B60AB9172666EE0002F3A9 /* KeySelectionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeySelectionButton.m; sourceTree = "<group>"; };
+		10B60ABB172677410002F3A9 /* DisplayKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayKeys.h; sourceTree = "<group>"; };
+		10B60ABC172677410002F3A9 /* DisplayKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayKeys.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +162,8 @@
 				105F9ECE1724CB4600CCD307 /* messages.plist */,
 				105F9ED01724D0DC00CCD307 /* Cryptogram.h */,
 				105F9ED11724D0DC00CCD307 /* Cryptogram.m */,
+				10B60ABB172677410002F3A9 /* DisplayKeys.h */,
+				10B60ABC172677410002F3A9 /* DisplayKeys.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -152,6 +175,12 @@
 				105F9EE817250AED00CCD307 /* MenuOption.m */,
 				1041B8FA17261B4A007BA914 /* CryptoCharacter.h */,
 				1041B8FB17261B4A007BA914 /* CryptoCharacter.m */,
+				1041B8FD1726323E007BA914 /* EncryptionKey.h */,
+				1041B8FE1726323E007BA914 /* EncryptionKey.m */,
+				10B60AB5172662580002F3A9 /* AnswerKey.h */,
+				10B60AB6172662580002F3A9 /* AnswerKey.m */,
+				10B60AB8172666EE0002F3A9 /* KeySelectionButton.h */,
+				10B60AB9172666EE0002F3A9 /* KeySelectionButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -167,6 +196,9 @@
 				105F9EDF1724D6FE00CCD307 /* GameController.h */,
 				105F9EE01724D6FE00CCD307 /* GameController.m */,
 				105F9EEE172541EC00CCD307 /* GameController.xib */,
+				104CF11E1727BFDB002ECED1 /* MessageSolvedViewController.h */,
+				104CF11F1727BFDB002ECED1 /* MessageSolvedViewController.m */,
+				104CF1201727BFDB002ECED1 /* MessageSolvedViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -174,9 +206,11 @@
 		105F9EE21724DA6100CCD307 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				104CF1251727C844002ECED1 /* message_unlocked.png */,
+				104CF1121727BE3A002ECED1 /* play.png */,
+				10B60AB317265F990002F3A9 /* iphone_bg.jpg */,
+				10B60AB1172658460002F3A9 /* black_button.png */,
 				105F9EF017254B1D00CCD307 /* game_bg.jpg */,
-				105F9EEC172540CB00CCD307 /* game_bg_0.jpg */,
-				105F9EEA17250CA300CCD307 /* lock.png */,
 				105F9EE31724DA7C00CCD307 /* paper_background_1680x1050.jpg */,
 			);
 			name = Assets;
@@ -240,10 +274,13 @@
 				105F9ECF1724CB4600CCD307 /* messages.plist in Resources */,
 				105F9EE41724DA7C00CCD307 /* paper_background_1680x1050.jpg in Resources */,
 				105F9EE61724DD8F00CCD307 /* TitlePageController.xib in Resources */,
-				105F9EEB17250CA300CCD307 /* lock.png in Resources */,
-				105F9EED172540CB00CCD307 /* game_bg_0.jpg in Resources */,
 				105F9EEF172541EC00CCD307 /* GameController.xib in Resources */,
 				105F9EF117254B1D00CCD307 /* game_bg.jpg in Resources */,
+				10B60AB2172658460002F3A9 /* black_button.png in Resources */,
+				10B60AB417265F990002F3A9 /* iphone_bg.jpg in Resources */,
+				104CF1131727BE3A002ECED1 /* play.png in Resources */,
+				104CF1221727BFDB002ECED1 /* MessageSolvedViewController.xib in Resources */,
+				104CF1261727C844002ECED1 /* message_unlocked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +299,11 @@
 				105F9EE11724D6FE00CCD307 /* GameController.m in Sources */,
 				105F9EE917250AED00CCD307 /* MenuOption.m in Sources */,
 				1041B8FC17261B4A007BA914 /* CryptoCharacter.m in Sources */,
+				1041B8FF1726323E007BA914 /* EncryptionKey.m in Sources */,
+				10B60AB7172662580002F3A9 /* AnswerKey.m in Sources */,
+				10B60ABA172666EE0002F3A9 /* KeySelectionButton.m in Sources */,
+				10B60ABD172677410002F3A9 /* DisplayKeys.m in Sources */,
+				104CF1211727BFDB002ECED1 /* MessageSolvedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +345,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -326,7 +368,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -339,6 +381,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CodeBreak/CodeBreak-Prefix.pch";
 				INFOPLIST_FILE = "CodeBreak/CodeBreak-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -350,6 +393,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CodeBreak/CodeBreak-Prefix.pch";
 				INFOPLIST_FILE = "CodeBreak/CodeBreak-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

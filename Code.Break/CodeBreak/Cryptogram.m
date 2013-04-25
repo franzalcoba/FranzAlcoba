@@ -28,7 +28,7 @@
     Cryptogram* crypto = [[[Cryptogram alloc] init] autorelease];
     crypto.author = cryptoDict[@"cryptograms"][index][0];
     crypto.cryptogram = cryptoDict[@"cryptograms"][index][1];
-    
+
     return crypto;
 }
 
@@ -38,8 +38,7 @@
     for (int i = 65; i <= 90; i++) {
         [keyCharacters addObject:[NSString stringWithFormat:@"%c", i]];
     }
-
-    NSLog(@"%@", [self cryptogram]);
+    
     characterSet = [[NSMutableDictionary alloc] init];
     
     //Generate a key value for each character in the message string
@@ -63,7 +62,7 @@
 
 - (NSString *) generateKeyValue
 {
-    int randomNum = random() % [keyCharacters count];
+    int randomNum = 1 + random() % ([keyCharacters count]-1);
     NSString *generatedKey = [keyCharacters objectAtIndex:randomNum];
     [keyCharacters removeObject:generatedKey];
     return generatedKey;
@@ -73,6 +72,12 @@
 {
     int x = (int)[aChar characterAtIndex:0] ;
     return (x >= 65 && x <= 90);
+}
+
+-(void) dealloc
+{
+    
+    [super dealloc];
 }
 
 @end

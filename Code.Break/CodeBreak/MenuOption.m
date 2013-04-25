@@ -16,14 +16,27 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
-        UIImage *btn = [UIImage imageNamed:@"lock.png"];
+        //Set button image
+        UIImage *btn = [UIImage imageNamed:@"play.png"];
         [self setBackgroundImage:btn forState:UIControlStateNormal];
+        [btn release];
         
-        CGSize btnSize = CGSizeMake(50.0, 50.0);
-        frame.size = btnSize;
+        //Set button size
+        frame.size = CGSizeMake(50.0, 50.0);
     }
     return self;
+}
+
+- (void)setAsSolved:(BOOL) won
+{
+    if(won){
+        UIImage *btn = [UIImage imageNamed:@"message_unlocked.png"];
+        [self setBackgroundImage:btn forState:UIControlStateNormal];
+        [btn release];
+
+        [self setTintColor:[UIColor greenColor]];
+    }
+    return;
 }
 
  /*
@@ -46,4 +59,9 @@
     // Drawing code
 }
 */
+
+- (void) dealloc
+{
+    [super dealloc];
+}
 @end

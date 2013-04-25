@@ -9,6 +9,7 @@
 #import "MenuController.h"
 #import "MenuOption.h"
 #import "GameController.h"
+#import "MessageSolvedViewController.h"
 
 @interface MenuController ()
     
@@ -32,22 +33,55 @@
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"paper_background_1680x1050.jpg"] ];
     [[self view] setBackgroundColor:background];
     
+    [background release];
+    
     [self showPuzzleMenu];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:NO];
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 -(void) showPuzzleMenu
 {
     float _x = 25.0;
     float _y = 25.0;
-    
     int counter = 1;
+
+   
+    // Get the stored data before the view loads
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *cryptoNumber;
+    NSString *winStr;
+    //int seconds_elapsed = [defaults integerForKey:cryptoNumber];
+    BOOL game_status;
     
     for (int j = 0; j < 5; j++) {
         for (int i = 0; i < 8; i++) {
+            
+            cryptoNumber = [NSString stringWithFormat:@"%d", counter];
+            winStr = [NSString stringWithFormat:@"%@win", cryptoNumber];
+            game_status = [defaults boolForKey:winStr];
+            
             MenuOption *btn = [[MenuOption alloc] initWithFrame:CGRectMake(_x, _y, 50,50)];
             [btn setTag:counter++];
-            [btn addTarget:self action:@selector(startGame:)  forControlEvents:UIControlEventTouchUpInside];
+            
+            if(game_status){
+                [btn setAsSolved: game_status];
+                [btn addTarget:self action:@selector(showDecryptedMessage:)  forControlEvents:UIControlEventTouchUpInside];
+            }else{
+                [btn addTarget:self action:@selector(startGame:)  forControlEvents:UIControlEventTouchUpInside];
+            }
+            
             [[self view] addSubview:btn];
             _x += 55;
         }
@@ -62,14 +96,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)startGame: (MenuOption *)sender
+- (IBAction)startGame: (MenuOption *)sender
 {
     int gameNumber = [sender tag];
     NSLog(@"%d", gameNumber);
     GameController *gameController =  [[GameController alloc] init];
     [gameController setMessageNumber:gameNumber];
     [[self navigationController] pushViewController:gameController animated:NO];
-
 }
+
+- (IBAction)showDecryptedMessage: (MenuOption *)sender
+{
+    int gameNumber = [sender tag];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    MessageSolvedViewController *winController =  [[MessageSolvedViewController alloc] init];
+    [winController setMessageNumber:gameNumber];
+    [winController setSecondsSolved:[defaults integerForKey:[NSString stringWithFormat:@"%d", gameNumber]]];
+    [[self navigationController] pushViewController:winController animated:YES];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+}
+
 
 @end

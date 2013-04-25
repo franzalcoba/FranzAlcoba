@@ -15,6 +15,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        //[self setFont:]
+        [self setTextColor:[UIColor grayColor]];
+        [self setBackgroundColor:[UIColor clearColor]];
     }
     return self;
 }

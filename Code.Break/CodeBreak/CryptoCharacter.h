@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+    Cryptogram character displayed on the screen
+    and updated on character selection.
+ 
+    An array object in the DisplayKeys object.
+ */
+
 @interface CryptoCharacter : UILabel
-{
-    int status;
-}
+
 @end
