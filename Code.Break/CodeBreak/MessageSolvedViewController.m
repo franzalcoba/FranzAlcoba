@@ -76,17 +76,30 @@
     [timeSolved setText:[self formatTimeSolved]];
     
     [cryptogramPuzzle release];
+    [cryptogramPuzzle dealloc];
 }
 
 - (IBAction)backMenu:(UIButton *)sender
 {
     [[self navigationController] popViewControllerAnimated:YES];
+    [messageQuote release];
+    [messageAuthor release];
+    [timeSolved release];
+    [[self view] release];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:YES];
+    [messageQuote release];
+    [messageAuthor release];
+    [timeSolved release];
 }
 
 - (void)dealloc

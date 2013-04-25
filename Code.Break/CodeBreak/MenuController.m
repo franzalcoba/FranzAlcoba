@@ -32,17 +32,14 @@
 	// Do any additional setup after loading the view.
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"paper_background_1680x1050.jpg"] ];
     [[self view] setBackgroundColor:background];
-    
     [background release];
-    
-    [self showPuzzleMenu];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:NO];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    [self showPuzzleMenu];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
@@ -67,7 +64,6 @@
     
     for (int j = 0; j < 5; j++) {
         for (int i = 0; i < 8; i++) {
-            
             cryptoNumber = [NSString stringWithFormat:@"%d", counter];
             winStr = [NSString stringWithFormat:@"%@win", cryptoNumber];
             game_status = [defaults boolForKey:winStr];
@@ -83,6 +79,7 @@
             }
             
             [[self view] addSubview:btn];
+            [btn release];
             _x += 55;
         }
         _x = 25.0;
@@ -103,6 +100,7 @@
     GameController *gameController =  [[GameController alloc] init];
     [gameController setMessageNumber:gameNumber];
     [[self navigationController] pushViewController:gameController animated:NO];
+    [gameController release];
 }
 
 - (IBAction)showDecryptedMessage: (MenuOption *)sender
@@ -110,11 +108,11 @@
     int gameNumber = [sender tag];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     MessageSolvedViewController *winController =  [[MessageSolvedViewController alloc] init];
     [winController setMessageNumber:gameNumber];
     [winController setSecondsSolved:[defaults integerForKey:[NSString stringWithFormat:@"%d", gameNumber]]];
     [[self navigationController] pushViewController:winController animated:YES];
+    [winController release];
 }
 
 - (void) viewWillDisappear:(BOOL)animated

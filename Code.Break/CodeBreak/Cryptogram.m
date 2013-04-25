@@ -29,6 +29,9 @@
     crypto.author = cryptoDict[@"cryptograms"][index][0];
     crypto.cryptogram = cryptoDict[@"cryptograms"][index][1];
 
+    fileName = nil;
+    messagePath = nil;
+    [cryptoDict release];
     return crypto;
 }
 
@@ -57,7 +60,8 @@
             [characterSet setValue:generatedKeyValue forKey:c];
             NSLog(@"%@ = %@", c, generatedKeyValue);
         }
-    }    
+    }
+    [keyCharacters release];
 }
 
 - (NSString *) generateKeyValue
@@ -76,7 +80,8 @@
 
 -(void) dealloc
 {
-    
+    [keyCharacters release];
+    [characterSet release];
     [super dealloc];
 }
 

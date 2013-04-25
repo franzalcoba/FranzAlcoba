@@ -49,6 +49,7 @@
 - (IBAction)enterMenu:(id)sender {
     MenuController *menu = [[MenuController alloc] init];
     [[self navigationController] pushViewController:menu animated:NO];
+    [menu release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation
