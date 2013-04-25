@@ -15,6 +15,7 @@
 }
 
 - (void)showPuzzleMenu;
+- (IBAction)backToTitle: (UIButton *)sender;
 - (IBAction)startGame: (MenuOption *)sender;
 - (IBAction)showDecryptedMessage: (MenuOption *)sender;
 

@@ -363,7 +363,7 @@
 
     if(sender.isEnabled){
         [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
-        UIImage *btn = [UIImage imageNamed:@"32.png"];
+        UIImage *btn = [UIImage imageNamed:@"correct.png"];
         [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
 
         selectedAnswerKey.answer = sender.titleLabel.text;
@@ -406,9 +406,24 @@
     [characterSelection setHidden:YES];
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        seconds_elapsed = 0;
+        game_status = NO;
+        [self save:nil];
+        [[self navigationController] popViewControllerAnimated:NO];
+    }
+}
+
 - (IBAction)backMenu:(UIButton *)sender
 {
-    [[self navigationController] popViewControllerAnimated:NO];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Puzzle not yet solved!"
+                                                    message:@"Exiting the game will reset your development. Continue?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Continue Puzzle"
+                                          otherButtonTitles:@"Exit",nil];
+    [alert show];
+    [alert release];
 }
 
 - (BOOL)checkAnswers
@@ -427,6 +442,13 @@
     {
         if(![[answerKeys objectForKey:key] isEqualToString:[cryptogramAnswers objectForKey:key]])
         {
+            //recently selected answer button change to RED if wrong
+            if([selectedAnswerKey.answer isEqualToString:[answerKeys objectForKey:key]])
+            {
+                [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
+                UIImage *btn = [UIImage imageNamed:@"wrong.png"];
+                [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
+            }
             //NSLog(@"WRONG! %@ != %@", key, [answerKeys objectForKey:key]);
             bWinFlag = NO;
         }

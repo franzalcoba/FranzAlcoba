@@ -39,6 +39,15 @@
 {
     [super viewWillAppear:NO];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self
+               action:@selector(backToTitle:)
+     forControlEvents:UIControlEventTouchDown];
+    [button setTitle:@"Back" forState:UIControlStateNormal];
+    button.frame = CGRectMake(-7.0, -7.0, 65.0, 38.0);
+    [[self view] addSubview:button];
+    
     [self showPuzzleMenu];
 }
 
@@ -92,6 +101,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)backToTitle: (UIButton *)sender
+{
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (IBAction)startGame: (MenuOption *)sender
