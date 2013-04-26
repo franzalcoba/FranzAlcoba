@@ -30,7 +30,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-   // UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"menu-bg.png"] ];
     UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
     [backGround setImage:[UIImage imageNamed:@"title-page-bg.png"]];
     [[self view] addSubview:backGround];
@@ -119,7 +118,7 @@
                 [btn addTarget:self action:@selector(showDecryptedMessage:)  forControlEvents:UIControlEventTouchUpInside];
             }else{
                 //Set button image
-                UIImage *btnImage = [UIImage imageNamed:@"play.png"];
+                UIImage *btnImage = [UIImage imageNamed:@"key-icon-dull.png"];
                 [btn setBackgroundImage:btnImage forState:UIControlStateNormal];
                 [btn addTarget:self action:@selector(startGame:)  forControlEvents:UIControlEventTouchUpInside];
             }

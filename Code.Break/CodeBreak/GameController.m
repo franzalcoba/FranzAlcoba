@@ -503,7 +503,7 @@
     [message show];
     game_status = YES;
     [self save:nil];
-    [self backMenu:nil];
+    [[self navigationController] popViewControllerAnimated:NO];
 }
 
 - (void)didReceiveMemoryWarning
