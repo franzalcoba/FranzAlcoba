@@ -139,9 +139,10 @@
 					<object class="IBUIScrollView" id="896232586">
 						<reference key="NSNextResponder" ref="898907970"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{377, -5}, {103, 325}}</string>
+						<string key="NSFrame">{{377, 0}, {103, 325}}</string>
 						<reference key="NSSuperview" ref="898907970"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
