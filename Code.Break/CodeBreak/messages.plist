@@ -6,124 +6,120 @@
 	<array>
 		<string></string>
 		<array>
-			<string></string>
-			<string>TESTING</string>
+			<string>Anthony Burgess</string>
+			<string>LAUGH, AND THE WORLD LAUGHS WITH YOU; SNORE AND YOU SLEEP ALONE.</string>
 		</array>
 		<array>
-			<string></string>
-			<string>TESTING</string>
+			<string>Rex Harrison</string>
+			<string>WHATEVER IT IS THAT MAKES A PERSON CHARMING, IT NEEDS TO REMAIN A MYSTERY.</string>
 		</array>
 		<array>
-			<string></string>
-			<string>TESTING</string>
+			<string>Mickey Spillane</string>
+			<string>A WRITER IS SOMEONE WHO ALWAYS SELLS. AN AUTHOR IS ONE WHO ALWAYS MAKES A BIG SPLASH.</string>
 		</array>
 		<array>
-			<string></string>
-			<string>TESTING</string>
+			<string>Albert Einstein</string>
+			<string>ONLY TWO THINGS ARE INFINITE, THE UNIVERSE AND HUMAN STUPIDITY, AND I&apos;M NOT SURE ABOUT THE FORMER.</string>
 		</array>
 		<array>
-			<string></string>
-			<string>TESTING</string>
+			<string>Martin Luther King Jr.</string>
+			<string>IN THE END, WE WILL REMEMBER NOT THE WORDS OF OUR ENEMIES, BUT THE SILENCE OF OUR FRIENDS.</string>
 		</array>
 		<array>
-			<string></string>
-			<string>TESTING</string>
+			<string>Napoleon Bonaparte</string>
+			<string>NEVER INTERRUPT YOUR ENEMY WHEN HE IS MAKING A MISTAKE.</string>
 		</array>
 		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string></string>
-			<string>TESTING</string>
-		</array>
-		<array>
-			<string>ME</string>
-			<string>HELLO AGAIN</string>
-		</array>
-		<array>
-			<string>Franz</string>
-			<string>TESTING</string>
+			<string>Vivian Greene</string>
+			<string>LIFE ISN&apos;T ABOUT WAITING FOR THE STORM TO PASS; IT&apos;S ABOUT LEARNING TO DANCE IN THE RAIN.</string>
 		</array>
 		<array>
 			<string>Mark Luyun</string>
 			<string>FEAR LEADS TO HATE, HATE LEADS TO ANGER, ANGER LEADS TO DARKSIDE, DARKSIDE LEADS TO MARK, RYAN AND AJ.</string>
 		</array>
 		<array>
-			<string>Me</string>
-			<string>HELLO!</string>
+			<string>Voltaire</string>
+			<string>GOD IS A COMEDIAN PLAYING TO AN AUDIENCE TOO AFRAID TO LAUGH.</string>
+		</array>
+		<array>
+			<string>John D. Rockefeller</string>
+			<string>A FRIENDSHIP FOUNDED ON BUSINESS IS BETTER THAN A BUSINESS FOUNDED ON FRIENDSHIP.</string>
+		</array>
+		<array>
+			<string>Albert Einstein</string>
+			<string>NOT EVERYTHING THAT CAN BE COUNTED COUNTS, AND NOT EVERYTHING THAT COUNTS CAN BE COUNTED.</string>
+		</array>
+		<array>
+			<string>Samuel Johnson</string>
+			<string>A TRUE MEASURE OF A MAN IS HOW HE TREATS SOMEONE WHO CAN DO HIM ABSOLUTELY NO GOOD.</string>
+		</array>
+		<array>
+			<string>Jimi Hendrix</string>
+			<string>KNOWLEDGE SPEAKS, BUT WISDOM LISTENS.</string>
+		</array>
+		<array>
+			<string>Will Durant</string>
+			<string>EDUCATION IS A PROGRESSIVE DISCOVERY OF OUR OWN IGNORANCE.</string>
+		</array>
+		<array>
+			<string>Henry Ford</string>
+			<string>OBSTACLES ARE THOSE FRIGHTFUL THINGS YOU SEE WHEN YOU TAKE YOUR EYES OFF YOUR GOAL.</string>
+		</array>
+		<array>
+			<string>Henry David Thoreau</string>
+			<string>SUCCESS USUALLY COMES TO THOSE WHO ARE TOO BUSY TO BE LOOKING FOR IT.</string>
+		</array>
+		<array>
+			<string>Sir Winston Churchill</string>
+			<string>SOMETIMES IT IS NOT ENOUGH THAT WE DO OUR BEST; WE MUST DO WHAT IS REQUIRED.</string>
+		</array>
+		<array>
+			<string>Edmund Burke</string>
+			<string>THE ONLY THING NECESSARY FOR THE TRIUMPH OF EVIL IS FOR GOOD MEN TO DO NOTHING.</string>
+		</array>
+		<array>
+			<string>Von Clausewitz</string>
+			<string>THE BACKBONE OF SURPRISE IS FUSING SPEED WITH SECRECY.</string>
+		</array>
+		<array>
+			<string>Tom Clancy</string>
+			<string>THE DIFFERENCE BETWEEN FICTION AND REALITY? FICTION HAS TO MAKE SENSE.</string>
+		</array>
+		<array>
+			<string>Alan Kay</string>
+			<string>THE BEST WAY TO PREDICT THE FUTURE IS TO INVENT IT.</string>
+		</array>
+		<array>
+			<string>Igor Stravinsky</string>
+			<string>TOO MANY PIECES OF MUSIC FINISH TOO LONG AFTER THE END.</string>
+		</array>
+		<array>
+			<string>Ralph Waldo Emerson</string>
+			<string>SOMETIMES A SCREAM IS BETTER THAN A THESIS.</string>
+		</array>
+		<array>
+			<string>Goethe</string>
+			<string>WHEN IDEAS FAIL, WORDS COME IN VERY HANDY.</string>
+		</array>
+		<array>
+			<string>Oscar Wilde</string>
+			<string>IT&apos;S BETTER TO HAVE A PERMANENT INCOME THAN TO BE FASCINATING.</string>
+		</array>
+		<array>
+			<string>John F. Kennedy</string>
+			<string>FORGIVE YOUR ENEMIES, BUT NEVER FORGET THEIR NAMES.</string>
+		</array>
+		<array>
+			<string>Mahatma Gandhi</string>
+			<string>FIRST THEY IGNORE YOU, THEN THEY LAUGH AT YOU, THEN THEY FIGHT YOU, THEN YOU WIN.</string>
+		</array>
+		<array>
+			<string>Paul Erdos</string>
+			<string>A MATHEMATICIAN IS A DEVICE FOR TURNING COFFEE INTO THEOREMS.</string>
+		</array>
+		<array>
+			<string>Yoda</string>
+			<string>DO, OR DO NOT. THERE IS NO &apos;TRY&apos;.</string>
 		</array>
 		<array>
 			<string>Franklin D. Roosevelt</string>
@@ -164,6 +160,10 @@
 		<array>
 			<string>Albert Einstein</string>
 			<string>ONLY A LIFE LIVED FOR OTHERS IS A LIFE WORTHWHILE.</string>
+		</array>
+		<array>
+			<string>Franz Alcoba</string>
+			<string>THANK YOU!</string>
 		</array>
 	</array>
 </dict>
