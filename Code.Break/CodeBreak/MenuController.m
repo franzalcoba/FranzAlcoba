@@ -30,9 +30,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"paper_background_1680x1050.jpg"] ];
-    [[self view] setBackgroundColor:background];
-    [background release];
+   // UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"menu-bg.png"] ];
+    UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
+    [backGround setImage:[UIImage imageNamed:@"title-page-bg.png"]];
+    [[self view] addSubview:backGround];
+    [[self view] sendSubviewToBack:backGround];
+    [backGround release];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -40,13 +43,33 @@
     [super viewWillAppear:NO];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
     
+    UIImage *btnImage = [UIImage imageNamed:@"menu button.png"];
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self
                action:@selector(backToTitle:)
      forControlEvents:UIControlEventTouchDown];
     [button setTitle:@"Back" forState:UIControlStateNormal];
-    button.frame = CGRectMake(-7.0, -7.0, 65.0, 38.0);
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setBackgroundImage:btnImage forState:UIControlStateNormal];
+    button.frame = CGRectMake(5.0, -7.0, 100.0, 38.0);
     [[self view] addSubview:button];
+    button = nil;
+    
+    UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if (game_mode == 0) {
+        [levelBtn setTitle:@"EASY GAME" forState:UIControlStateDisabled];
+    }else{
+        [levelBtn setTitle:@"NORMAL GAME" forState:UIControlStateDisabled];
+    }
+    [levelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+    [levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
+    [levelBtn setEnabled:NO];
+    levelBtn.frame = CGRectMake(279.0, -7.0, 200.0, 38.0);
+    [[self view] addSubview:levelBtn];
+    levelBtn = nil;
+    
+    btnImage = nil;
     
     [self showPuzzleMenu];
 }
@@ -56,10 +79,15 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
+- (void)setGameMode: (int) gameMode
+{
+    game_mode = gameMode;
+}
+
 -(void) showPuzzleMenu
 {
     float _x = 25.0;
-    float _y = 25.0;
+    float _y = 40.0;
     int counter = 1;
 
     // Get the stored data before the view loads
@@ -67,20 +95,27 @@
     
     NSString *cryptoNumber;
     NSString *winStr;
+    NSString *gameModeStr;
     //int seconds_elapsed = [defaults integerForKey:cryptoNumber];
     BOOL game_status;
+    int game_mode_finished = 0;
     
     for (int j = 0; j < 5; j++) {
         for (int i = 0; i < 8; i++) {
             cryptoNumber = [NSString stringWithFormat:@"%d", counter];
+            
             winStr = [NSString stringWithFormat:@"%@win", cryptoNumber];
             game_status = [defaults boolForKey:winStr];
+            
+            gameModeStr = [NSString stringWithFormat:@"%@mode", cryptoNumber];
+            game_mode_finished = [defaults integerForKey:gameModeStr];
             
             MenuOption *btn = [[MenuOption alloc] initWithFrame:CGRectMake(_x, _y, 50,50)];
             [btn setTag:counter++];
             [btn setBackgroundImage:nil forState:UIControlStateNormal];
+            
             if(game_status){
-                [btn setAsSolved: game_status];
+                [btn setAsSolved: game_mode_finished];
                 [btn addTarget:self action:@selector(showDecryptedMessage:)  forControlEvents:UIControlEventTouchUpInside];
             }else{
                 //Set button image
@@ -113,6 +148,7 @@
     int gameNumber = [sender tag];
     NSLog(@"%d", gameNumber);
     GameController *gameController =  [[GameController alloc] init];
+    [gameController setGameMode: game_mode];
     [gameController setMessageNumber:gameNumber];
     [[self navigationController] pushViewController:gameController animated:NO];
     [gameController release];

@@ -15,6 +15,7 @@
 {
     NSTimer *aTimer;
     int messageNumber;
+    int game_mode;
     BOOL game_status;
     
     // CRYPTOGRAM CHARACTERS
@@ -53,6 +54,7 @@
 
 //PUZZLE NUMBER SELECTED
 - (void)setMessageNumber:(int) n;
+- (void)setGameMode: (int) gameMode;
 
 //DISPLAY OF MAIN VIEWS
 - (void)displayCryptogram;

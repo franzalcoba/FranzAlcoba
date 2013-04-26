@@ -69,9 +69,27 @@
     [displayCryptogramView setBackgroundColor:background];
     [background release];
     
-    background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"iphone_bg.jpg"] ];
+    background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"buttons_bg.png"] ];
     [[self view] setBackgroundColor:background];
     [background release];
+    
+    
+    UIImage *btnImage = [UIImage imageNamed:@"menu button.png"];
+
+    UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if (game_mode == 0) {
+        [levelBtn setTitle:@"EASY" forState:UIControlStateDisabled];
+    }else{
+        [levelBtn setTitle:@"NORMAL" forState:UIControlStateDisabled];
+    }
+    [levelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+    [levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
+    [levelBtn setEnabled:NO];
+    btnImage = nil;
+
+    levelBtn.frame = CGRectMake(110.0, -7.0, 150.0, 38.0);
+    [displayCryptogramView addSubview:levelBtn];
+
     
     //RETRIEVE MESSAGE AND ENCRYPT - CREATE CRYPTOGRAM
     cryptogramPuzzle = [[Cryptogram alloc] initWithCryptoNumber:messageNumber]; //[Cryptogram cryptoMessageWithNumber:messageNumber];
@@ -92,6 +110,11 @@
 - (void)setMessageNumber:(int) n
 {
     messageNumber = n;
+}
+
+- (void)setGameMode: (int) gameMode
+{
+    game_mode = gameMode;
 }
 
 - (void)updateTimer:(NSTimer *) theTimer
@@ -307,11 +330,11 @@
     //Create the view for the selection of letters
     characterSelection = [[UIScrollView alloc]
                           initWithFrame:
-                          CGRectMake(0, displayCryptogramView.bounds.size.height-50.0f, self.view.bounds.size.width, 100.0f)];
+                          CGRectMake(0, displayCryptogramView.bounds.size.height-100.0f, self.view.bounds.size.width, 100.0f)];
     characterSelection.delegate = self;
     
-    float charSelectionButtonDim = 50.0;
-    CGFloat stringWidth = 50.0;
+    float charSelectionButtonDim = 65.0;
+    CGFloat stringWidth = 65.0;
     NSInteger xOffset = 0;
     NSString *character;
     
@@ -322,7 +345,7 @@
         character = [NSString stringWithFormat:@"%c", i];
         
         KeySelectionButton *tagButton = [[KeySelectionButton alloc] init];
-        tagButton.frame = CGRectMake(xOffset, 0, charSelectionButtonDim, charSelectionButtonDim);
+        tagButton.frame = CGRectMake(xOffset, 18, charSelectionButtonDim, charSelectionButtonDim);
         
         [tagButton setKeyCharacter:character];
         
@@ -346,9 +369,13 @@
     
     //the view is initially hidden
     [characterSelection setHidden:YES];
+    
+    UIColor *keysBG = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"keyboard-bg.png"] ];
+    [characterSelection setBackgroundColor:keysBG];
     [characterSelection setContentSize:CGSizeMake(xOffset, 44.0f)];
-
     [[self view] addSubview:characterSelection];
+    
+    [keysBG release];
 }
 
 - (void)answerKeySelect: (AnswerKey *)sender
@@ -442,14 +469,17 @@
     {
         if(![[answerKeys objectForKey:key] isEqualToString:[cryptogramAnswers objectForKey:key]])
         {
-            //recently selected answer button change to RED if wrong
-            if([selectedAnswerKey.answer isEqualToString:[answerKeys objectForKey:key]])
+            if(game_mode == 0)
             {
-                [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
-                UIImage *btn = [UIImage imageNamed:@"wrong.png"];
-                [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
+                //recently selected answer button change to RED if wrong
+                if([selectedAnswerKey.answer isEqualToString:[answerKeys objectForKey:key]])
+                {
+                    [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
+                    UIImage *btn = [UIImage imageNamed:@"wrong.png"];
+                    [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
+                }
+                //NSLog(@"WRONG! %@ != %@", key, [answerKeys objectForKey:key]);
             }
-            //NSLog(@"WRONG! %@ != %@", key, [answerKeys objectForKey:key]);
             bWinFlag = NO;
         }
     }
@@ -488,12 +518,19 @@
     
     // Store the data
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *winStr = [NSString stringWithFormat:@"%@win", cryptoNumber];
+    NSString *gameMode = [NSString stringWithFormat:@"%@mode", cryptoNumber];
+    
+    //STORE TIME ELAPSED FOR GAME
     [defaults setInteger:seconds_elapsed forKey:cryptoNumber];
     
-    NSString *winStr = [NSString stringWithFormat:@"%@win", cryptoNumber];
+    //STORE GAME STATUS - win or not finished
     [defaults setBool:game_status forKey:winStr];
-    [defaults synchronize];
     
+    //STORE GAME MODE - easy or normal
+    [defaults setInteger:game_mode forKey:gameMode];
+    
+    [defaults synchronize];
     NSLog(@"Data saved");
 }
 
@@ -532,7 +569,6 @@
     [displayCryptogramView release];
     [characterSelection release];
     [decryptionKeyScrollView release];
-    
     [super dealloc];
 }
 

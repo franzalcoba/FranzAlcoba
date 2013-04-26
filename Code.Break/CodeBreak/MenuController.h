@@ -11,12 +11,14 @@
 
 @interface MenuController : UIViewController
 {
-    
+    int game_mode;
 }
 
 - (void)showPuzzleMenu;
 - (IBAction)backToTitle: (UIButton *)sender;
 - (IBAction)startGame: (MenuOption *)sender;
 - (IBAction)showDecryptedMessage: (MenuOption *)sender;
+
+- (void)setGameMode: (int) gameMode;
 
 @end

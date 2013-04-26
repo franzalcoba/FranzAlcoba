@@ -15,6 +15,6 @@
 
 @interface MenuOption : UIButton
 
-- (void)setAsSolved:(BOOL)won;
+- (void)setAsSolved:(int)game_mode_finished;
 
 @end

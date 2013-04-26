@@ -22,15 +22,18 @@
     return self;
 }
 
-- (void)setAsSolved:(BOOL) won
+- (void)setAsSolved:(int) game_mode_finished
 {
-    if(won){
-        [self setBackgroundImage:nil forState:UIControlStateNormal];
-        UIImage *btn = [UIImage imageNamed:@"message_unlocked.png"];
-        [self setBackgroundImage:btn forState:UIControlStateNormal];
-        [self setTintColor:[UIColor greenColor]];
+    [self setBackgroundImage:nil forState:UIControlStateNormal];
+    UIImage *btn;
+    if(game_mode_finished == 0) //SOLVED IN EASY MODE
+    {
+        btn = [UIImage imageNamed:@"key-icon-silver.png"];
+    }else{ //SOLVED IN NORMAL MODE
+        btn = [UIImage imageNamed:@"key-icon-gold.png"];
     }
-    return;
+    [self setBackgroundImage:btn forState:UIControlStateNormal];
+    btn = nil;
 }
 
  /*

@@ -42,7 +42,6 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, 258}, {480, 62}}</string>
 						<reference key="NSSuperview" ref="898907970"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="896232586"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -56,9 +55,8 @@
 							<object class="IBUIButton" id="516234979">
 								<reference key="NSNextResponder" ref="962673773"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{-6, -6}, {68, 38}}</string>
+								<string key="NSFrame">{{5, -8}, {100, 38}}</string>
 								<reference key="NSSuperview" ref="962673773"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1066141034"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -73,11 +71,15 @@
 								</object>
 								<object class="NSColor" key="IBUINormalTitleColor">
 									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+									<bytes key="NSRGB">MC45Mzc5MDQ0OTg1IDAuOTIxMzUwNjIxNiAxAA</bytes>
 								</object>
 								<object class="NSColor" key="IBUINormalTitleShadowColor">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
+								</object>
+								<object class="NSCustomResource" key="IBUINormalBackgroundImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">menu button.png</string>
 								</object>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">2</int>
@@ -92,9 +94,8 @@
 							<object class="IBUILabel" id="1066141034">
 								<reference key="NSNextResponder" ref="962673773"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{293, 10}, {70, 21}}</string>
+								<string key="NSFrame">{{297, 9}, {70, 21}}</string>
 								<reference key="NSSuperview" ref="962673773"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="178114536"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -124,7 +125,6 @@
 						</array>
 						<string key="NSFrameSize">{377, 320}</string>
 						<reference key="NSSuperview" ref="898907970"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="516234979"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -141,8 +141,6 @@
 						<int key="NSvFlags">268</int>
 						<string key="NSFrame">{{377, 0}, {103, 325}}</string>
 						<reference key="NSSuperview" ref="898907970"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -151,7 +149,6 @@
 				</array>
 				<string key="NSFrameSize">{480, 320}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="962673773"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -211,14 +208,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">game_timer</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="1066141034"/>
-					</object>
-					<int key="connectionID">81</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">decryptionKeyScrollView</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="896232586"/>
@@ -226,13 +215,12 @@
 					<int key="connectionID">84</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">backMenu:</string>
-						<reference key="source" ref="516234979"/>
-						<reference key="destination" ref="841351856"/>
-						<int key="IBEventType">7</int>
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">game_timer</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="1066141034"/>
 					</object>
-					<int key="connectionID">79</int>
+					<int key="connectionID">81</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -242,6 +230,15 @@
 						<int key="IBEventType">7</int>
 					</object>
 					<int key="connectionID">83</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">backMenu:</string>
+						<reference key="source" ref="516234979"/>
+						<reference key="destination" ref="841351856"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">79</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -288,6 +285,11 @@
 						<reference key="parent" ref="898907970"/>
 					</object>
 					<object class="IBObjectRecord">
+						<int key="objectID">25</int>
+						<reference key="object" ref="896232586"/>
+						<reference key="parent" ref="898907970"/>
+					</object>
+					<object class="IBObjectRecord">
 						<int key="objectID">78</int>
 						<reference key="object" ref="516234979"/>
 						<reference key="parent" ref="962673773"/>
@@ -296,11 +298,6 @@
 						<int key="objectID">80</int>
 						<reference key="object" ref="1066141034"/>
 						<reference key="parent" ref="962673773"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">25</int>
-						<reference key="object" ref="896232586"/>
-						<reference key="parent" ref="898907970"/>
 					</object>
 				</array>
 			</object>
@@ -321,58 +318,9 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">84</int>
+			<int key="maxID">86</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">GameController</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="backMenu:">id</string>
-						<string key="save:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="backMenu:">
-							<string key="name">backMenu:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="save:">
-							<string key="name">save:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="characterSelection">UIScrollView</string>
-						<string key="decryptionKeyScrollView">UIScrollView</string>
-						<string key="displayCryptogramView">UIView</string>
-						<string key="game_timer">UILabel</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="characterSelection">
-							<string key="name">characterSelection</string>
-							<string key="candidateClassName">UIScrollView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="decryptionKeyScrollView">
-							<string key="name">decryptionKeyScrollView</string>
-							<string key="candidateClassName">UIScrollView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="displayCryptogramView">
-							<string key="name">displayCryptogramView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="game_timer">
-							<string key="name">game_timer</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/GameController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencies">
@@ -381,6 +329,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">menu button.png</string>
+			<string key="NS.object.0">{164, 62}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

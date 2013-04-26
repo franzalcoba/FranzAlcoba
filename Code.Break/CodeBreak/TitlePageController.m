@@ -14,6 +14,7 @@
 @end
 
 @implementation TitlePageController
+@synthesize easyModeButton, normalModeButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,10 +29,17 @@
 {
     [super viewDidLoad];
     
-   UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"paper_background_1680x1050.jpg"] ];
-   [[self view] setBackgroundColor:background];
-   [background release];
-    // Do any additional setup after loading the view.
+    UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
+    [backGround setImage:[UIImage imageNamed:@"menu-bg.png"]];
+    [backGround setAlpha:0.9];
+    [[self view] addSubview:backGround];
+    [[self view] sendSubviewToBack:backGround];
+    [backGround release];
+    
+    UIImage *btnImage = [UIImage imageNamed:@"title button.png"];
+    [easyModeButton setBackgroundImage:btnImage forState:UIControlStateNormal];
+    [normalModeButton setBackgroundImage:btnImage forState:UIControlStateNormal];
+    btnImage = nil;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -46,8 +54,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)enterMenu:(id)sender {
+- (IBAction)enterMenu:(UIButton *)sender {
     MenuController *menu = [[MenuController alloc] init];
+    [menu setGameMode: sender.tag];
     [[self navigationController] pushViewController:menu animated:NO];
     [menu release];
 }
@@ -64,6 +73,8 @@
 
 - (void)dealloc
 {
+    [easyModeButton release];
+    [normalModeButton release];
     [super dealloc];
 }
 

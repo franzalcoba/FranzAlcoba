@@ -12,6 +12,8 @@
 {
     
 }
+@property (retain, nonatomic) IBOutlet UIButton *easyModeButton;
+@property (retain, nonatomic) IBOutlet UIButton *normalModeButton;
 - (IBAction)enterMenu:(id)sender;
 - (IBAction)enterHowTo:(id)sender;
 
