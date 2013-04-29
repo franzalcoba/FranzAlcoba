@@ -23,7 +23,7 @@
 
 @implementation GameController
 
-@synthesize cryptogramPuzzle;
+@synthesize cryptogramPuzzle, hiddenMessage, hiddenAuthor, menuButton;
 @synthesize displayCryptogramView, characterSelection, decryptionKeyScrollView;
 @synthesize game_timer;
 
@@ -69,28 +69,27 @@
     [displayCryptogramView setBackgroundColor:background];
     [background release];
     
-    background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"buttons_bg.png"] ];
+    background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"game_buttons_bg.png"] ];
     [[self view] setBackgroundColor:background];
     [background release];
     
-    
-    UIImage *btnImage = [UIImage imageNamed:@"menu button.png"];
+    //UIImage *btnImage = [UIImage imageNamed:@"silver.png"];
 
-    UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     if (game_mode == 0) {
-        [levelBtn setTitle:@"EASY" forState:UIControlStateDisabled];
+        [levelBtn setTitle:@"EASY MODE" forState:UIControlStateDisabled];
     }else{
-        [levelBtn setTitle:@"NORMAL" forState:UIControlStateDisabled];
+        [levelBtn setTitle:@"NORMAL MODE" forState:UIControlStateDisabled];
     }
-    [levelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
-    [levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
+    [levelBtn setBackgroundColor:[UIColor clearColor]];
+    [levelBtn setTitleColor:[UIColor blueColor] forState:UIControlStateDisabled];
+    //[levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
     [levelBtn setEnabled:NO];
-    btnImage = nil;
+    //btnImage = nil;
 
-    levelBtn.frame = CGRectMake(110.0, -7.0, 150.0, 38.0);
+    levelBtn.frame = CGRectMake(110.0, 0.0, 150.0, 30.0);
     [displayCryptogramView addSubview:levelBtn];
 
-    
     //RETRIEVE MESSAGE AND ENCRYPT - CREATE CRYPTOGRAM
     cryptogramPuzzle = [[Cryptogram alloc] initWithCryptoNumber:messageNumber]; //[Cryptogram cryptoMessageWithNumber:messageNumber];
     [cryptogramPuzzle setEncryptionKeys];
@@ -100,6 +99,16 @@
     for (NSString *c in [cryptogramPuzzle.characterSet allValues]) {
         [answerKeys setValue:@"" forKey:c];
     }
+
+    //HIDE SECRET MESSAGE VIEW
+    [[self view] sendSubviewToBack:hiddenMessage];
+    [hiddenMessage setEditable:NO];
+    [hiddenMessage setBackgroundColor:[UIColor clearColor]];
+    [hiddenMessage setAlpha:0.0];
+    
+    [[self view] sendSubviewToBack:hiddenAuthor];
+    [hiddenAuthor setBackgroundColor:[UIColor clearColor]];
+    [hiddenAuthor setAlpha:0.0];
     
     //DISPLAY ALL VIEWS
     [self displayDecryptionKeys];
@@ -165,7 +174,7 @@
         [displayKeys setValue:dk forKey:c];
         
         EncryptionKey *displayedKey = [[EncryptionKey alloc] initWithFrame:CGRectMake(offset_x, offset_y, answerButtonSize, answerButtonSize)];
-        [displayedKey setTitle:c forState:UIControlStateNormal];
+        [displayedKey setTitle:c forState:UIControlStateDisabled];
         
         offset_x += answerButtonSize+10;
         
@@ -197,10 +206,16 @@
 
 -(void) displayCryptogram
 {
+    //FETCH KEY ENCRYPTION
     NSMutableDictionary *charSet = [cryptogramPuzzle characterSet];
     
+    //FETCH MESSAGE TO ENCODE
     NSString *message = [cryptogramPuzzle cryptogram];
     int message_length = [message length];
+    
+    //HIDDEN MESSAGE
+    [hiddenMessage setText:message];
+    [hiddenAuthor setText:[cryptogramPuzzle author]];
 
     float offset_x = 20;
     float offset_y = 10;
@@ -292,9 +307,7 @@
             }//end printing of a word
             
             //PRINT SPACE after every word.
-            
-            
-            
+
             //CRYPTOGRAM ANSWER
             CryptoCharacter *aChar = [[CryptoCharacter alloc] initWithFrame:CGRectMake(offset_x, offset_y, 20, 15)];
             [aChar setText:@" "];
@@ -316,7 +329,7 @@
     }
     [wordsArray release];
     
-    [displayCryptoScrollView setContentSize:CGSizeMake(decryptionKeyScrollView.bounds.size.width, offset_y + 100)];
+    [displayCryptoScrollView setContentSize:CGSizeMake(decryptionKeyScrollView.bounds.size.width, offset_y + 200)];
     [displayCryptoScrollView addSubview:cryptogramView];
     
     [displayCryptogramView addSubview:displayCryptoScrollView];
@@ -370,7 +383,7 @@
     //the view is initially hidden
     [characterSelection setHidden:YES];
     
-    UIColor *keysBG = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"keyboard-bg.png"] ];
+    UIColor *keysBG = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"game_key_selection.png"] ];
     [characterSelection setBackgroundColor:keysBG];
     [characterSelection setContentSize:CGSizeMake(xOffset, 44.0f)];
     [[self view] addSubview:characterSelection];
@@ -380,17 +393,18 @@
 
 - (void)answerKeySelect: (AnswerKey *)sender
 {
+    //Display the character selection at the bottom of the screen
     selectedAnswerKey = sender;
     [characterSelection setHidden:NO];
 }
 
 - (void)answerKeySelected: (KeySelectionButton *)sender
 {
+    //key character has been selected
     selectedScrollViewKey = sender;
-
     if(sender.isEnabled){
         [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
-        UIImage *btn = [UIImage imageNamed:@"correct.png"];
+        UIImage *btn = [UIImage imageNamed:@"game_correct_key.png"];
         [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
 
         selectedAnswerKey.answer = sender.titleLabel.text;
@@ -399,42 +413,28 @@
         [answerKeys setValue:selectedAnswerKey.answer forKey:selectedAnswerKey.answerForKey];
   
         [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer];
-    
         [selectedAnswerKey setTitle:sender.titleLabel.text forState:UIControlStateNormal];
-        [self disableUsedKeys];
+        
+        //hide character selection
+        [characterSelection setHidden:YES];
     }
     
+    //check if the latest entry solved the cryptogram
     if ([self checkAnswers])
     {
         [self cryptogramSolved];
     }
 }
 
-- (void) disableUsedKeys
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(keyChoices)
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"OK"])
     {
-        for(KeySelectionButton *k in keyChoices)
-        {
-            //NSLog(@"hello");
-        //
-        //[k setEnabled:YES];
-        //NSLog(@"KeySelection label: %@", [k keyCharacter]);
-        /*if(tLabel)
-        {
-            if([[answerKeys allValues] containsObject:tLabel])
-            {
-                [k setEnabled:NO];
-            }
-        }*/
-        //tLabel = nil;
-        }
-    }
-    [characterSelection setHidden:YES];
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
+        [menuButton removeFromSuperview];
+        [[self view] addSubview:  menuButton];
+        [[self view] bringSubviewToFront:menuButton];
+    }else if([title isEqualToString:@"Exit"]){
         seconds_elapsed = 0;
         game_status = NO;
         [self save:nil];
@@ -444,13 +444,17 @@
 
 - (IBAction)backMenu:(UIButton *)sender
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Puzzle not yet solved!"
+    if(game_status == NO){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Puzzle not yet solved!"
                                                     message:@"Exiting the game will reset your development. Continue?"
                                                    delegate:self
                                           cancelButtonTitle:@"Continue Puzzle"
                                           otherButtonTitles:@"Exit",nil];
-    [alert show];
-    [alert release];
+        [alert show];
+        [alert release];
+    }else{
+        [[self navigationController] popViewControllerAnimated:NO];
+    }
 }
 
 - (BOOL)checkAnswers
@@ -475,8 +479,9 @@
                 if([selectedAnswerKey.answer isEqualToString:[answerKeys objectForKey:key]])
                 {
                     [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
-                    UIImage *btn = [UIImage imageNamed:@"wrong.png"];
+                    UIImage *btn = [UIImage imageNamed:@"game_wrong_key.png"];
                     [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
+                    btn = nil;
                 }
                 //NSLog(@"WRONG! %@ != %@", key, [answerKeys objectForKey:key]);
             }
@@ -490,20 +495,63 @@
 
 - (void)cryptogramSolved
 {
+    //PUZZLE SOLVED - game won!
+    
     //stop time
     [aTimer invalidate];
     aTimer = nil;
     
-    //temporary
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"GREAT JOB!"
-                                                      message:@"You've decoded the secret message."
-                                                     delegate:nil
-                                            cancelButtonTitle:@"OK"
-                                            otherButtonTitles:nil];
-    [message show];
+    //save game
     game_status = YES;
     [self save:nil];
-    [[self navigationController] popViewControllerAnimated:NO];
+    
+    //win animation
+    [self showWinAnimation];
+}
+
+- (void)showWinAnimation
+{
+    UIColor *background = [[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"game_bg.jpg"] ] autorelease];
+    backDrop = [[UIImageView alloc] init];
+    backDrop.frame = CGRectMake(0, 0, 480, 320);
+    backDrop.backgroundColor = background;
+    background = nil;
+    [background release];
+    [background release];
+    
+    backDrop.alpha = 0.0;
+    
+    [self.view addSubview:backDrop];
+    [self.view bringSubviewToFront:backDrop];
+    
+    [[self view] bringSubviewToFront:hiddenMessage];
+    [[self view] bringSubviewToFront:hiddenAuthor];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView commitAnimations];
+    
+    [UIView animateWithDuration:2.0
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [backDrop setAlpha:1.0];
+                         [backDrop addSubview:hiddenMessage];
+                         [backDrop addSubview:hiddenAuthor];
+                         
+                         [hiddenMessage setAlpha:1.0];
+                         [hiddenAuthor setAlpha:1.0];
+                     }
+                     completion:^(BOOL finished){
+                         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"CONGRATULATIONS!"
+                                                                           message:@"You've decoded the secret message."
+                                                                          delegate:self
+                                                                 cancelButtonTitle:@"OK"
+                                                                 otherButtonTitles:nil];
+                         [message show];
+                         [message release];
+                     }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -553,6 +601,10 @@
     answerKeys = nil;
     displayKeys = nil;
     
+    backDrop = nil;
+    hiddenAuthor = nil;
+    hiddenMessage = nil;
+    
     displayCryptogramView = nil;
     characterSelection = nil;
     decryptionKeyScrollView = nil;
@@ -566,9 +618,15 @@
     [answerKeys release];
     [displayKeys release];
     
+    [backDrop release];
     [displayCryptogramView release];
     [characterSelection release];
     [decryptionKeyScrollView release];
+    
+    [hiddenMessage release];
+    [hiddenAuthor release];
+    
+    [menuButton release];
     [super dealloc];
 }
 

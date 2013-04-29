@@ -35,9 +35,14 @@
     
     AnswerKey *selectedAnswerKey;
     KeySelectionButton *selectedScrollViewKey;
+    
+    UIImageView *backDrop;
 }
 
 /****************************************************************************/
+@property (retain, nonatomic) IBOutlet UITextView *hiddenMessage;
+@property (retain, nonatomic) IBOutlet UILabel *hiddenAuthor;
+@property (retain, nonatomic) IBOutlet UIButton *menuButton;
 
 //SELECTED CRYPTOGRAM
 @property (strong, nonatomic) Cryptogram *cryptogramPuzzle;
@@ -69,9 +74,11 @@
 - (BOOL)checkAnswers;
 - (void)cryptogramSolved;
 
+//WIN ANIMATION
+- (void)showWinAnimation;
+
 //ETC
 - (IBAction)backMenu:(id)sender;
 - (void)answerKeySelect: (AnswerKey *)sender;
-- (void) disableUsedKeys;
 
 @end

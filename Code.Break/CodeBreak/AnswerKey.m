@@ -19,32 +19,10 @@
         UIImage *btn = [UIImage imageNamed:@"black_button.png"];
         [self setBackgroundImage:btn forState:UIControlStateNormal];
         [self setTitle:@"?" forState:UIControlStateNormal];
-        
-        //[self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        //[self setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        
         answerForKey = [[NSString alloc] init];
         answer = [[NSString alloc] init];
     }
     return self;
 }
-/*
-- (void)setEncryptedKey: (EncryptionKey *)encryptedKey
-{
-    encKey = encryptedKey;
-}
-
-- (void)highlightKey
-{
-    [encKey setBackgroundColor:[UIColor blueColor]];
-}
-/*
-// Only override drawRect: if you perfosrm custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

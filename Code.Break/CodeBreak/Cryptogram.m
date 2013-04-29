@@ -11,31 +11,6 @@
 @implementation Cryptogram
 @synthesize characterSet, author, cryptogram;
 
-/*
-+(instancetype)cryptoMessageWithNumber:(int)index
-{
-    // find .plist file
-    NSString* fileName = @"messages.plist";
-    NSString* messagePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fileName];
-    
-    // load .plist file
-    NSDictionary* cryptoDict = [NSDictionary dictionaryWithContentsOfFile:messagePath];
-    
-    // validation
-    NSAssert(cryptoDict, @"level config file not found");
-    
-    // create Cryptogram instance
-    // add autorelease
-    Cryptogram* crypto = [[Cryptogram alloc] init];
-    crypto.author = cryptoDict[@"cryptograms"][index][0];
-    crypto.cryptogram = cryptoDict[@"cryptograms"][index][1];
-
-    fileName = nil;
-    messagePath = nil;
-    cryptoDict = nil;
-    return crypto;
-}
-*/
 - (id) initWithCryptoNumber:(int)index
 {
     // find .plist file
@@ -56,6 +31,7 @@
     fileName = nil;
     messagePath = nil;
     cryptoDict = nil;
+    [cryptoDict release];
     
     return self;
 }

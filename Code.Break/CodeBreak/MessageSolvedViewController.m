@@ -35,6 +35,10 @@
     
     [messageQuote setEditable:NO];
     [messageQuote setBackgroundColor:[UIColor clearColor]];
+    
+    [messageQuote setAlpha:0.0];
+    [messageAuthor setAlpha: 0.0];
+    
     [self showMessage];
 }
 
@@ -73,9 +77,19 @@
     Cryptogram *cryptogramPuzzle = [[[Cryptogram alloc] initWithCryptoNumber:messageNumber] autorelease];//[Cryptogram cryptoMessageWithNumber:messageNumber];
     [messageQuote setText:[cryptogramPuzzle cryptogram]];
     [messageAuthor setText:[cryptogramPuzzle author]];
-    [timeSolved setText:[self formatTimeSolved]];
     
     cryptogramPuzzle = nil;
+    [cryptogramPuzzle release];
+    
+    [timeSolved setText:[self formatTimeSolved]];
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    [UIView setAnimationDuration:3.0];
+    [messageQuote setAlpha:1.0];
+    [messageAuthor setAlpha:1.0];
+    [UIView commitAnimations];
 }
 
 - (IBAction)backMenu:(UIButton *)sender

@@ -15,29 +15,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        UIImage *btn = [UIImage imageNamed:@"black_button.png"];
-        [self setBackgroundImage:btn forState:UIControlStateNormal];
-        
-        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        // Set default backgrond color
-        //[self setBackgroundColor:[UIColor blackColor]];
-        // Add Custom Font
-        //[[self titleLabel] setFont:[UIFont fontWithName:@"Knewave" size:18.0f]];
+        [self setBackgroundColor:[UIColor clearColor]];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+        [self setEnabled:NO];
     }
     return self;
 }
-/*
-- (void)setAnswerKey: (AnswerKey *)answerKey
-{
-    ansKey = answerKey;
-}
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
-
 @end

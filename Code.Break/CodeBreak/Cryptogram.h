@@ -23,10 +23,7 @@
 // VALUE    = generated random character
 @property (strong, nonatomic) NSMutableDictionary *characterSet;
 
-
-
 //factory method to load a .plist file and initialize the model
-//+(instancetype)cryptoMessageWithNumber:(int) index;
 - (id) initWithCryptoNumber:(int)index;
 
 //functions for message encryption

@@ -10,14 +10,8 @@
 #import "EncryptionKey.h"
 
 @interface AnswerKey : UIButton
-/*{
-    __weak EncryptionKey *encKey;
-}
- */
+
 @property (strong, nonatomic) NSString *answerForKey;
 @property (strong, nonatomic) NSString *answer;
-
-//- (void)setEncryptedKey: (EncryptionKey *)encryptedKey;
-//- (void)highlightKey;
 
 @end

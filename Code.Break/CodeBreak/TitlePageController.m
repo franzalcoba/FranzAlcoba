@@ -30,13 +30,13 @@
     [super viewDidLoad];
     
     UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
-    [backGround setImage:[UIImage imageNamed:@"menu-bg.png"]];
+    [backGround setImage:[UIImage imageNamed:@"title_bg.png"]];
     [backGround setAlpha:0.9];
     [[self view] addSubview:backGround];
     [[self view] sendSubviewToBack:backGround];
     [backGround release];
     
-    UIImage *btnImage = [UIImage imageNamed:@"title button.png"];
+    UIImage *btnImage = [UIImage imageNamed:@"title_button.png"];
     [easyModeButton setBackgroundImage:btnImage forState:UIControlStateNormal];
     [normalModeButton setBackgroundImage:btnImage forState:UIControlStateNormal];
     btnImage = nil;

@@ -31,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
-    [backGround setImage:[UIImage imageNamed:@"title-page-bg.png"]];
+    [backGround setImage:[UIImage imageNamed:@"menu_bg.png"]];
     [[self view] addSubview:backGround];
     [[self view] sendSubviewToBack:backGround];
     [backGround release];
@@ -55,14 +55,15 @@
     [[self view] addSubview:button];
     button = nil;
     
-    UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     if (game_mode == 0) {
         [levelBtn setTitle:@"EASY GAME" forState:UIControlStateDisabled];
     }else{
         [levelBtn setTitle:@"NORMAL GAME" forState:UIControlStateDisabled];
     }
-    [levelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
-    [levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
+    [levelBtn setBackgroundColor:[UIColor clearColor]];
+    [levelBtn setTitleColor:[UIColor blueColor] forState:UIControlStateDisabled];
+    //[levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
     [levelBtn setEnabled:NO];
     levelBtn.frame = CGRectMake(279.0, -7.0, 200.0, 38.0);
     [[self view] addSubview:levelBtn];
@@ -161,7 +162,7 @@
     MessageSolvedViewController *winController =  [[MessageSolvedViewController alloc] init];
     [winController setMessageNumber:gameNumber];
     [winController setSecondsSolved:[defaults integerForKey:[NSString stringWithFormat:@"%d", gameNumber]]];
-    [[self navigationController] pushViewController:winController animated:YES];
+    [[self navigationController] pushViewController:winController animated:NO];
     [winController release];
 }
 

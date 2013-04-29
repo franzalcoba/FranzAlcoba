@@ -10,9 +10,5 @@
 #import "AnswerKey.h"
 
 @interface EncryptionKey : UIButton
-/*{
-    __weak AnswerKey *ansKey;
-}
-- (void)setAnswerKey: (AnswerKey *)answerKey;
-*/
+
 @end
