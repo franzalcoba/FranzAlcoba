@@ -27,10 +27,18 @@
     [displayLabels addObject:aChar];
 }
 
-- (void)changeCharacterDisplay:(NSString *)newKey
+- (void)changeCharacterDisplay:(NSString *)newKey isCorrect:(BOOL)validation
 {
     for (CryptoCharacter *cryptoChar in displayLabels) {
         [cryptoChar setText:newKey];
+        if(validation)
+        {
+            [cryptoChar setTextColor:[UIColor blueColor]];
+        }
+        else
+        {
+            [cryptoChar setTextColor:[UIColor redColor]];
+        }
     }
 }
 

@@ -14,6 +14,6 @@
     NSMutableArray *displayLabels;
 }
 - (void)addCryptoCharacter: (CryptoCharacter *)aChar;
-- (void)changeCharacterDisplay:(NSString *)newKey;
+- (void)changeCharacterDisplay:(NSString *)newKey isCorrect:(BOOL)validation;
 
 @end

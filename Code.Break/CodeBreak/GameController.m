@@ -419,8 +419,7 @@
         selectedAnswerKey.answer = sender.titleLabel.text;
         [answerKeys setValue:selectedAnswerKey.answer forKey:selectedAnswerKey.answerForKey];
          NSLog(@"player Answered: %@ = %@", selectedAnswerKey.answerForKey, selectedAnswerKey.answer);
-        
-        [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer];
+
         [selectedAnswerKey setTitle:sender.titleLabel.text forState:UIControlStateNormal];
         
         //hide character selection
@@ -461,8 +460,13 @@
             UIImage *btn = [UIImage imageNamed:@"game_wrong_key.png"];
             [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
             btn = nil;
+            [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer isCorrect:NO];
             return NO; //No need to check for other answers
+        }else{
+            [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer isCorrect:YES];
         }
+    }else{
+        [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer isCorrect:YES];
     }
     
     //CHECK PLAYER ANSWERS
