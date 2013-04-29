@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
     UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
-    [backGround setImage:[UIImage imageNamed:@"title_bg.png"]];
+    [backGround setImage:[UIImage imageNamed:@"menu_bg.png"]];
     [backGround setAlpha:0.9];
     [[self view] addSubview:backGround];
     [[self view] sendSubviewToBack:backGround];

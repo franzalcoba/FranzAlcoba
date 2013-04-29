@@ -33,6 +33,11 @@
     // VALUE: KeySelectionButton
     NSMutableDictionary *keyChoices;
     
+    // ANSWER KEYS - for checking player answers
+    // KEY : letter
+    // VALUE : letter
+    NSMutableDictionary *cryptogramAnswers;
+    
     AnswerKey *selectedAnswerKey;
     KeySelectionButton *selectedScrollViewKey;
     

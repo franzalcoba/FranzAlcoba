@@ -42,6 +42,7 @@
     [super viewWillAppear:NO];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
     
+    /*
     UIImage *btnImage = [UIImage imageNamed:@"menu button.png"];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -50,26 +51,37 @@
      forControlEvents:UIControlEventTouchDown];
     [button setTitle:@"Back" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //[[button titleLabel] setFont:[UIFont fontWithName:@"Copperplate-Bold" size:20.f]];
     [button setBackgroundImage:btnImage forState:UIControlStateNormal];
     button.frame = CGRectMake(5.0, -7.0, 100.0, 38.0);
     [[self view] addSubview:button];
     button = nil;
+    */
     
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton addTarget:self
+                   action:@selector(backToTitle:)
+         forControlEvents:UIControlEventTouchDown];
+    [backButton setImage:[UIImage imageNamed:@"back button 32.png"] forState:UIControlStateNormal];
+    backButton.frame = CGRectMake(5.0, 5.0, 32.0, 32.0);
+    [[self view] addSubview:backButton];
+ 
     UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     if (game_mode == 0) {
         [levelBtn setTitle:@"EASY GAME" forState:UIControlStateDisabled];
     }else{
         [levelBtn setTitle:@"NORMAL GAME" forState:UIControlStateDisabled];
     }
+    [[levelBtn titleLabel] setFont:[UIFont fontWithName:@"Copperplate-Bold" size:20.f]];
+    
     [levelBtn setBackgroundColor:[UIColor clearColor]];
-    [levelBtn setTitleColor:[UIColor blueColor] forState:UIControlStateDisabled];
+    [levelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+    [levelBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
     //[levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
     [levelBtn setEnabled:NO];
-    levelBtn.frame = CGRectMake(279.0, -7.0, 200.0, 38.0);
+    levelBtn.frame = CGRectMake(260.0, 0.0, 200.0, 38.0);
     [[self view] addSubview:levelBtn];
     levelBtn = nil;
-    
-    btnImage = nil;
     
     [self showPuzzleMenu];
 }
@@ -110,7 +122,7 @@
             gameModeStr = [NSString stringWithFormat:@"%@mode", cryptoNumber];
             game_mode_finished = [defaults integerForKey:gameModeStr];
             
-            MenuOption *btn = [[MenuOption alloc] initWithFrame:CGRectMake(_x, _y, 50,50)];
+            MenuOption *btn = [[MenuOption alloc] initWithFrame:CGRectMake(_x, _y, 48,48)];
             [btn setTag:counter++];
             [btn setBackgroundImage:nil forState:UIControlStateNormal];
             

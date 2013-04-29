@@ -73,26 +73,34 @@
     [[self view] setBackgroundColor:background];
     [background release];
     
-    //UIImage *btnImage = [UIImage imageNamed:@"silver.png"];
-
+    //UIImage *btnImage = [UIImage imageNamed:@"game_mode_sign.png"];
     UIButton *levelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     if (game_mode == 0) {
-        [levelBtn setTitle:@"EASY MODE" forState:UIControlStateDisabled];
+        [levelBtn setTitle:@"~ EASY MODE ~" forState:UIControlStateDisabled];
     }else{
-        [levelBtn setTitle:@"NORMAL MODE" forState:UIControlStateDisabled];
+        [levelBtn setTitle:@"~ NORMAL MODE ~" forState:UIControlStateDisabled];
     }
+    [[levelBtn titleLabel] setFont:[UIFont fontWithName:@"Copperplate" size:16.0]];
+    
     [levelBtn setBackgroundColor:[UIColor clearColor]];
-    [levelBtn setTitleColor:[UIColor blueColor] forState:UIControlStateDisabled];
+    [levelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
     //[levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
     [levelBtn setEnabled:NO];
     //btnImage = nil;
-
-    levelBtn.frame = CGRectMake(110.0, 0.0, 150.0, 30.0);
+    levelBtn.frame = CGRectMake(100.0, 7.0, 160.0, 30.0);
     [displayCryptogramView addSubview:levelBtn];
 
     //RETRIEVE MESSAGE AND ENCRYPT - CREATE CRYPTOGRAM
     cryptogramPuzzle = [[Cryptogram alloc] initWithCryptoNumber:messageNumber]; //[Cryptogram cryptoMessageWithNumber:messageNumber];
     [cryptogramPuzzle setEncryptionKeys];
+    
+    //SET ANSWER KEY
+    cryptogramAnswers = [[NSMutableDictionary alloc] init];
+    for(NSString *s in [[cryptogramPuzzle characterSet] allKeys])
+    {
+        [cryptogramAnswers setValue:s forKey:[[cryptogramPuzzle characterSet] objectForKey:s]];
+        NSLog(@"ANSWERS: %@ = %@", [[cryptogramPuzzle characterSet] objectForKey:s], s);
+    }
     
     //SET INITIAL KEY ANSWERS TO AN EMPTY STRING
     answerKeys = [[NSMutableDictionary alloc] init];
@@ -218,7 +226,7 @@
     [hiddenAuthor setText:[cryptogramPuzzle author]];
 
     float offset_x = 20;
-    float offset_y = 10;
+    float offset_y = 20;
     
     //SETUP VIEW CONTAINERS
     UIScrollView *displayCryptoScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,30, displayCryptogramView.bounds.size.width, displayCryptogramView.bounds.size.height)];
@@ -229,7 +237,7 @@
     
     //create an array of words
     NSMutableArray *wordsArray = [[NSMutableArray alloc] init];
-    NSString *aWord = [[NSString alloc] init];
+    NSString *aWord = [[[NSString alloc] init] autorelease];
     for(int i = 0; i < message_length; i++)
     {
         if(!([message characterAtIndex:i] == 32)){
@@ -245,7 +253,6 @@
             aWord = nil;
         }
     }
-    [aWord release];
     
     int word_length = 0;
     int charsLeft = maxChars;
@@ -403,15 +410,16 @@
     //key character has been selected
     selectedScrollViewKey = sender;
     if(sender.isEnabled){
+        //set color of selected key in right panel to blue after answer selection
         [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
         UIImage *btn = [UIImage imageNamed:@"game_correct_key.png"];
         [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
-
+        
+        //change text to player's answer
         selectedAnswerKey.answer = sender.titleLabel.text;
-        NSLog(@"Answer: %@ = %@", selectedAnswerKey.answerForKey, selectedAnswerKey.answer);
-
         [answerKeys setValue:selectedAnswerKey.answer forKey:selectedAnswerKey.answerForKey];
-  
+         NSLog(@"player Answered: %@ = %@", selectedAnswerKey.answerForKey, selectedAnswerKey.answer);
+        
         [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer];
         [selectedAnswerKey setTitle:sender.titleLabel.text forState:UIControlStateNormal];
         
@@ -442,54 +450,32 @@
     }
 }
 
-- (IBAction)backMenu:(UIButton *)sender
-{
-    if(game_status == NO){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Puzzle not yet solved!"
-                                                    message:@"Exiting the game will reset your development. Continue?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"Continue Puzzle"
-                                          otherButtonTitles:@"Exit",nil];
-        [alert show];
-        [alert release];
-    }else{
-        [[self navigationController] popViewControllerAnimated:NO];
-    }
-}
-
 - (BOOL)checkAnswers
 {
-    //answerKeys SHOULD be equal to cryptogram
-    BOOL bWinFlag = YES;
-
-    //reverse player answers
-    NSMutableDictionary *cryptogramAnswers = [[NSMutableDictionary alloc] init];
-    for(NSString *s in [[cryptogramPuzzle characterSet] allKeys])
+    if(game_mode == 0)
     {
-        [cryptogramAnswers setValue:s forKey:[[cryptogramPuzzle characterSet] objectForKey:s]];
-    }
-
-    for(NSString *key in [answerKeys allKeys])
-    {
-        if(![[answerKeys objectForKey:key] isEqualToString:[cryptogramAnswers objectForKey:key]])
+        //WRONG ANSWER for recently selected key
+        if(! [selectedAnswerKey.answer isEqualToString: [cryptogramAnswers objectForKey: [selectedAnswerKey answerForKey] ] ])
         {
-            if(game_mode == 0)
-            {
-                //recently selected answer button change to RED if wrong
-                if([selectedAnswerKey.answer isEqualToString:[answerKeys objectForKey:key]])
-                {
-                    [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
-                    UIImage *btn = [UIImage imageNamed:@"game_wrong_key.png"];
-                    [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
-                    btn = nil;
-                }
-                //NSLog(@"WRONG! %@ != %@", key, [answerKeys objectForKey:key]);
-            }
-            bWinFlag = NO;
+            [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
+            UIImage *btn = [UIImage imageNamed:@"game_wrong_key.png"];
+            [selectedAnswerKey setBackgroundImage:btn forState:UIControlStateNormal];
+            btn = nil;
+            return NO; //No need to check for other answers
         }
     }
-
-    [cryptogramAnswers release];
+    
+    //CHECK PLAYER ANSWERS
+    BOOL bWinFlag = YES;
+    for(NSString *key in [answerKeys allKeys])
+    {
+        // PLAYER ANSWER NOT CORRECT
+        if(![[answerKeys objectForKey:key] isEqualToString:[cryptogramAnswers objectForKey:key]])
+        {
+            bWinFlag = NO;
+            break; //No need to check for other answers
+        }
+    }
     return bWinFlag;
 }
 
@@ -530,6 +516,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    
     [UIView commitAnimations];
     
     [UIView animateWithDuration:2.0
@@ -558,6 +545,21 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)backMenu:(UIButton *)sender
+{
+    if(game_status == NO){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Puzzle not yet solved!"
+                                                        message:@"Exiting the game will reset your development. Continue?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Continue Puzzle"
+                                              otherButtonTitles:@"Exit",nil];
+        [alert show];
+        [alert release];
+    }else{
+        [[self navigationController] popViewControllerAnimated:NO];
+    }
 }
 
 - (IBAction)save:(id)sender
@@ -597,6 +599,8 @@
     [super viewDidUnload];
     
     [cryptogramPuzzle dealloc];
+    cryptogramAnswers = nil;
+    
     keyChoices = nil;
     answerKeys = nil;
     displayKeys = nil;
@@ -613,6 +617,7 @@
 
 - (void)dealloc {
     [cryptogramPuzzle release];
+    [cryptogramAnswers release];
     
     [keyChoices release];
     [answerKeys release];

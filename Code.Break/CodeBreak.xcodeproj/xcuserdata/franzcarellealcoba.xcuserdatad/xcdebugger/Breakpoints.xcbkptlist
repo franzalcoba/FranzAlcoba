@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388897709.926125"
+         timestampString = "388917821.587623"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "341"
-         endingLineNumber = "341"
+         startingLineNumber = "348"
+         endingLineNumber = "348"
          landmarkName = "-displayCharacterSelection"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388897709.926125"
+         timestampString = "388917821.587623"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "401"
-         endingLineNumber = "401"
+         startingLineNumber = "408"
+         endingLineNumber = "408"
          landmarkName = "-answerKeySelected:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,24 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
+         timestampString = "388920671.772654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "445"
-         endingLineNumber = "445"
-         landmarkName = "-backMenu:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "557"
-         endingLineNumber = "557"
+         startingLineNumber = "542"
+         endingLineNumber = "542"
          landmarkName = "-didReceiveMemoryWarning"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,7 +73,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
+         timestampString = "388920671.772654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "563"
@@ -99,7 +86,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
+         timestampString = "388920671.772654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "585"
@@ -112,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
+         timestampString = "388920671.772654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "614"
-         endingLineNumber = "614"
+         startingLineNumber = "616"
+         endingLineNumber = "616"
          landmarkName = "-dealloc"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
+         timestampString = "388918938.943539"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "460"
-         endingLineNumber = "460"
+         startingLineNumber = "453"
+         endingLineNumber = "453"
          landmarkName = "-checkAnswers"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,59 +125,33 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
+         timestampString = "388920671.772654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "496"
-         endingLineNumber = "496"
+         startingLineNumber = "480"
+         endingLineNumber = "480"
          landmarkName = "-cryptogramSolved"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "469"
-         endingLineNumber = "469"
-         landmarkName = "-checkAnswers"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388897709.926125"
+         timestampString = "388917821.587623"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "401"
-         endingLineNumber = "401"
+         startingLineNumber = "408"
+         endingLineNumber = "408"
          landmarkName = "-answerKeySelected:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "469"
-         endingLineNumber = "469"
-         landmarkName = "-checkAnswers"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
+         timestampString = "388920671.772654"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "596"
@@ -203,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/MenuController.m"
-         timestampString = "388667306.322107"
+         timestampString = "388912850.739377"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
          landmarkName = "-showPuzzleMenu"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/MenuController.m"
-         timestampString = "388670835.404044"
+         timestampString = "388912850.739377"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "154"
-         endingLineNumber = "154"
+         startingLineNumber = "166"
+         endingLineNumber = "166"
          landmarkName = "-startGame:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/MenuController.m"
-         timestampString = "388670835.404044"
+         timestampString = "388912850.739377"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "166"
-         endingLineNumber = "166"
+         startingLineNumber = "178"
+         endingLineNumber = "178"
          landmarkName = "-showDecryptedMessage:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -255,25 +216,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CodeBreak/GameController.m"
-         timestampString = "388896503.40471"
+         timestampString = "388917821.587623"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "126"
-         endingLineNumber = "126"
+         startingLineNumber = "134"
+         endingLineNumber = "134"
          landmarkName = "-setGameMode:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CodeBreak/GameController.m"
-         timestampString = "388899585.930716"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "476"
-         endingLineNumber = "476"
-         landmarkName = "-checkAnswers"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

@@ -16,11 +16,13 @@
 			<array>
 				<string>1366964736_LogOff-64.png</string>
 				<string>retina logo.png</string>
+				<string>Code.Break logo.png</string>
+				<string>Code.Break logo-retina.png</string>
 			</array>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.cyscorpions.trainingtest</string>
+	<string>com.cyscorpions.trainingtest3</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

@@ -9,23 +9,20 @@
 /* Begin PBXBuildFile section */
 		1041B8FC17261B4A007BA914 /* CryptoCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1041B8FB17261B4A007BA914 /* CryptoCharacter.m */; };
 		1041B8FF1726323E007BA914 /* EncryptionKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 1041B8FE1726323E007BA914 /* EncryptionKey.m */; };
-		1048AB62172A2B71004FC4F3 /* 1366964736_LogOff-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB61172A2B71004FC4F3 /* 1366964736_LogOff-64.png */; };
-		1048AB64172A2BFA004FC4F3 /* retina logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB63172A2BFA004FC4F3 /* retina logo.png */; };
+		1048AB62172A2B71004FC4F3 /* Code.Break logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB61172A2B71004FC4F3 /* Code.Break logo.png */; };
+		1048AB64172A2BFA004FC4F3 /* Code.Break logo-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB63172A2BFA004FC4F3 /* Code.Break logo-retina.png */; };
 		1048AB6A172A33D7004FC4F3 /* title_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB69172A33D7004FC4F3 /* title_button.png */; };
-		1048AB6E172A3724004FC4F3 /* title_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB6D172A3724004FC4F3 /* title_bg@2x.png */; };
 		1048AB72172A38C3004FC4F3 /* game_buttons_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB71172A38C2004FC4F3 /* game_buttons_bg.png */; };
-		1048AB74172A4612004FC4F3 /* menu button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB73172A4612004FC4F3 /* menu button.png */; };
-		1048AB76172A4F91004FC4F3 /* title_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB75172A4F91004FC4F3 /* title_bg.png */; };
 		1048AB78172A543E004FC4F3 /* key-icon-silver.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB77172A543D004FC4F3 /* key-icon-silver.png */; };
 		1048AB7A172A582C004FC4F3 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB79172A582C004FC4F3 /* menu_bg.png */; };
 		1048AB81172A6B73004FC4F3 /* game_key_selection.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB7F172A6B72004FC4F3 /* game_key_selection.png */; };
 		1048AB82172A6B73004FC4F3 /* game_key_selection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB80172A6B72004FC4F3 /* game_key_selection@2x.png */; };
 		1048AB84172A7E9E004FC4F3 /* key-icon-dull.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB83172A7E9E004FC4F3 /* key-icon-dull.png */; };
-		1048AB89172A9367004FC4F3 /* silver.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB87172A9367004FC4F3 /* silver.png */; };
-		1048AB8A172A9367004FC4F3 /* silver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1048AB88172A9367004FC4F3 /* silver@2x.png */; };
 		104CF1131727BE3A002ECED1 /* key-icon-gold.png in Resources */ = {isa = PBXBuildFile; fileRef = 104CF1121727BE3A002ECED1 /* key-icon-gold.png */; };
 		104CF1211727BFDB002ECED1 /* MessageSolvedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 104CF11F1727BFDB002ECED1 /* MessageSolvedViewController.m */; };
 		104CF1221727BFDB002ECED1 /* MessageSolvedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104CF1201727BFDB002ECED1 /* MessageSolvedViewController.xib */; };
+		105B3530172E57EE003EC3B3 /* back button.png in Resources */ = {isa = PBXBuildFile; fileRef = 105B352F172E57EE003EC3B3 /* back button.png */; };
+		105B3532172E58DA003EC3B3 /* back button 32.png in Resources */ = {isa = PBXBuildFile; fileRef = 105B3531172E58DA003EC3B3 /* back button 32.png */; };
 		105F9EB21724C9AE00CCD307 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB11724C9AE00CCD307 /* UIKit.framework */; };
 		105F9EB41724C9AE00CCD307 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB31724C9AE00CCD307 /* Foundation.framework */; };
 		105F9EB61724C9AE00CCD307 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB51724C9AE00CCD307 /* CoreGraphics.framework */; };
@@ -57,24 +54,21 @@
 		1041B8FB17261B4A007BA914 /* CryptoCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptoCharacter.m; sourceTree = "<group>"; };
 		1041B8FD1726323E007BA914 /* EncryptionKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionKey.h; sourceTree = "<group>"; };
 		1041B8FE1726323E007BA914 /* EncryptionKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionKey.m; sourceTree = "<group>"; };
-		1048AB61172A2B71004FC4F3 /* 1366964736_LogOff-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1366964736_LogOff-64.png"; sourceTree = "<group>"; };
-		1048AB63172A2BFA004FC4F3 /* retina logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retina logo.png"; sourceTree = "<group>"; };
+		1048AB61172A2B71004FC4F3 /* Code.Break logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Code.Break logo.png"; path = "../Code.Break logo.png"; sourceTree = "<group>"; };
+		1048AB63172A2BFA004FC4F3 /* Code.Break logo-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Code.Break logo-retina.png"; path = "../Code.Break logo-retina.png"; sourceTree = "<group>"; };
 		1048AB69172A33D7004FC4F3 /* title_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_button.png; sourceTree = "<group>"; };
-		1048AB6D172A3724004FC4F3 /* title_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title_bg@2x.png"; sourceTree = "<group>"; };
 		1048AB71172A38C2004FC4F3 /* game_buttons_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_buttons_bg.png; sourceTree = "<group>"; };
-		1048AB73172A4612004FC4F3 /* menu button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu button.png"; sourceTree = "<group>"; };
-		1048AB75172A4F91004FC4F3 /* title_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title_bg.png; sourceTree = "<group>"; };
 		1048AB77172A543D004FC4F3 /* key-icon-silver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-icon-silver.png"; sourceTree = "<group>"; };
 		1048AB79172A582C004FC4F3 /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bg.png; sourceTree = "<group>"; };
 		1048AB7F172A6B72004FC4F3 /* game_key_selection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game_key_selection.png; sourceTree = "<group>"; };
 		1048AB80172A6B72004FC4F3 /* game_key_selection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "game_key_selection@2x.png"; sourceTree = "<group>"; };
 		1048AB83172A7E9E004FC4F3 /* key-icon-dull.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-icon-dull.png"; sourceTree = "<group>"; };
-		1048AB87172A9367004FC4F3 /* silver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silver.png; sourceTree = "<group>"; };
-		1048AB88172A9367004FC4F3 /* silver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "silver@2x.png"; sourceTree = "<group>"; };
 		104CF1121727BE3A002ECED1 /* key-icon-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-icon-gold.png"; sourceTree = "<group>"; };
 		104CF11E1727BFDB002ECED1 /* MessageSolvedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSolvedViewController.h; sourceTree = "<group>"; };
 		104CF11F1727BFDB002ECED1 /* MessageSolvedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSolvedViewController.m; sourceTree = "<group>"; };
 		104CF1201727BFDB002ECED1 /* MessageSolvedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageSolvedViewController.xib; sourceTree = "<group>"; };
+		105B352F172E57EE003EC3B3 /* back button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back button.png"; sourceTree = "<group>"; };
+		105B3531172E58DA003EC3B3 /* back button 32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back button 32.png"; sourceTree = "<group>"; };
 		105F9EAE1724C9AE00CCD307 /* CodeBreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105F9EB11724C9AE00CCD307 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		105F9EB31724C9AE00CCD307 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,11 +121,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		105B3526172E29E5003EC3B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1048AB61172A2B71004FC4F3 /* Code.Break logo.png */,
+				1048AB63172A2BFA004FC4F3 /* Code.Break logo-retina.png */,
+				105F9EE21724DA6100CCD307 /* Assets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		105F9EA51724C9AE00CCD307 = {
 			isa = PBXGroup;
 			children = (
-				1048AB63172A2BFA004FC4F3 /* retina logo.png */,
-				1048AB61172A2B71004FC4F3 /* 1366964736_LogOff-64.png */,
 				105F9EB71724C9AE00CCD307 /* CodeBreak */,
 				105F9EB01724C9AE00CCD307 /* Frameworks */,
 				105F9EAF1724C9AE00CCD307 /* Products */,
@@ -159,7 +161,7 @@
 		105F9EB71724C9AE00CCD307 /* CodeBreak */ = {
 			isa = PBXGroup;
 			children = (
-				105F9EE21724DA6100CCD307 /* Assets */,
+				105B3526172E29E5003EC3B3 /* Resources */,
 				105F9ED51724D60000CCD307 /* Controllers */,
 				105F9ED41724D5F200CCD307 /* View */,
 				105F9ED31724D0F300CCD307 /* Model */,
@@ -234,13 +236,10 @@
 		105F9EE21724DA6100CCD307 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				1048AB87172A9367004FC4F3 /* silver.png */,
-				1048AB88172A9367004FC4F3 /* silver@2x.png */,
-				1048AB75172A4F91004FC4F3 /* title_bg.png */,
-				1048AB6D172A3724004FC4F3 /* title_bg@2x.png */,
 				1048AB69172A33D7004FC4F3 /* title_button.png */,
 				1048AB79172A582C004FC4F3 /* menu_bg.png */,
-				1048AB73172A4612004FC4F3 /* menu button.png */,
+				105B352F172E57EE003EC3B3 /* back button.png */,
+				105B3531172E58DA003EC3B3 /* back button 32.png */,
 				1048AB77172A543D004FC4F3 /* key-icon-silver.png */,
 				104CF1121727BE3A002ECED1 /* key-icon-gold.png */,
 				1048AB83172A7E9E004FC4F3 /* key-icon-dull.png */,
@@ -319,20 +318,17 @@
 				104CF1221727BFDB002ECED1 /* MessageSolvedViewController.xib in Resources */,
 				10FA91D01729266200B6D705 /* game_correct_key.png in Resources */,
 				10FA91D21729594400B6D705 /* game_wrong_key.png in Resources */,
-				1048AB62172A2B71004FC4F3 /* 1366964736_LogOff-64.png in Resources */,
-				1048AB64172A2BFA004FC4F3 /* retina logo.png in Resources */,
+				1048AB62172A2B71004FC4F3 /* Code.Break logo.png in Resources */,
+				1048AB64172A2BFA004FC4F3 /* Code.Break logo-retina.png in Resources */,
 				1048AB6A172A33D7004FC4F3 /* title_button.png in Resources */,
-				1048AB6E172A3724004FC4F3 /* title_bg@2x.png in Resources */,
 				1048AB72172A38C3004FC4F3 /* game_buttons_bg.png in Resources */,
-				1048AB74172A4612004FC4F3 /* menu button.png in Resources */,
-				1048AB76172A4F91004FC4F3 /* title_bg.png in Resources */,
 				1048AB78172A543E004FC4F3 /* key-icon-silver.png in Resources */,
 				1048AB7A172A582C004FC4F3 /* menu_bg.png in Resources */,
 				1048AB81172A6B73004FC4F3 /* game_key_selection.png in Resources */,
 				1048AB82172A6B73004FC4F3 /* game_key_selection@2x.png in Resources */,
 				1048AB84172A7E9E004FC4F3 /* key-icon-dull.png in Resources */,
-				1048AB89172A9367004FC4F3 /* silver.png in Resources */,
-				1048AB8A172A9367004FC4F3 /* silver@2x.png in Resources */,
+				105B3530172E57EE003EC3B3 /* back button.png in Resources */,
+				105B3532172E58DA003EC3B3 /* back button 32.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,11 +426,15 @@
 		105F9ECC1724C9AE00CCD307 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CodeBreak/CodeBreak-Prefix.pch";
 				INFOPLIST_FILE = "CodeBreak/CodeBreak-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -442,11 +442,15 @@
 		105F9ECD1724C9AE00CCD307 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jhermin Cruz (723WF65B7J)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CodeBreak/CodeBreak-Prefix.pch";
 				INFOPLIST_FILE = "CodeBreak/CodeBreak-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4A3D8327-8EDA-4453-9B28-5BC7C04B2CA4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

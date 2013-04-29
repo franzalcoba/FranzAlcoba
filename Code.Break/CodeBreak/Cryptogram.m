@@ -59,7 +59,7 @@
         {
             NSString *generatedKeyValue = [self generateKeyValue];
             [characterSet setValue:generatedKeyValue forKey:c];
-            NSLog(@"%@ = %@", c, generatedKeyValue);
+            //NSLog(@"%@ = %@", c, generatedKeyValue);
         }
     }
     [keyCharacters release];
