@@ -18,6 +18,8 @@
         // Initialization code
         UIImage *btn = [UIImage imageNamed:@"black_button.png"];
         [self setBackgroundImage:btn forState:UIControlStateNormal];
+        
+        [btn release];
         [self setTitle:@"?" forState:UIControlStateNormal];
         answerForKey = [[NSString alloc] init];
         answer = [[NSString alloc] init];
@@ -25,4 +27,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    answerForKey = nil;
+    answer = nil;
+    [answer release];
+    [answerForKey release];
+    [super dealloc];
+    
+}
 @end

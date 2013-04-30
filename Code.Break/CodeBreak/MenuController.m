@@ -31,7 +31,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
-    [backGround setImage:[UIImage imageNamed:@"menu_bg.png"]];
+    [backGround setImage:[UIImage imageNamed:@"menu-bg.png"]];
+    [backGround setAlpha:0.5];
     [[self view] addSubview:backGround];
     [[self view] sendSubviewToBack:backGround];
     [backGround release];
@@ -75,7 +76,7 @@
     [[levelBtn titleLabel] setFont:[UIFont fontWithName:@"Copperplate-Bold" size:20.f]];
     
     [levelBtn setBackgroundColor:[UIColor clearColor]];
-    [levelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateDisabled];
+    [levelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
     [levelBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
     //[levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
     [levelBtn setEnabled:NO];

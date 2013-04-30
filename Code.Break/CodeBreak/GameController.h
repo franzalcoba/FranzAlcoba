@@ -17,6 +17,7 @@
     int messageNumber;
     int game_mode;
     BOOL game_status;
+    BOOL game_paused;
     
     // CRYPTOGRAM CHARACTERS
     // KEY  : letter (NSString)
@@ -48,6 +49,7 @@
 @property (retain, nonatomic) IBOutlet UITextView *hiddenMessage;
 @property (retain, nonatomic) IBOutlet UILabel *hiddenAuthor;
 @property (retain, nonatomic) IBOutlet UIButton *menuButton;
+@property (retain, nonatomic) IBOutlet UIView *pauseScreen;
 
 //SELECTED CRYPTOGRAM
 @property (strong, nonatomic) Cryptogram *cryptogramPuzzle;
