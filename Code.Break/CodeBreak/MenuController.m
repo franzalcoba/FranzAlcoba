@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
+    UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     [backGround setImage:[UIImage imageNamed:@"menu-bg.png"]];
     [backGround setAlpha:0.5];
     [[self view] addSubview:backGround];
@@ -42,22 +42,6 @@
 {
     [super viewWillAppear:NO];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
-    
-    /*
-    UIImage *btnImage = [UIImage imageNamed:@"menu button.png"];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button addTarget:self
-               action:@selector(backToTitle:)
-     forControlEvents:UIControlEventTouchDown];
-    [button setTitle:@"Back" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //[[button titleLabel] setFont:[UIFont fontWithName:@"Copperplate-Bold" size:20.f]];
-    [button setBackgroundImage:btnImage forState:UIControlStateNormal];
-    button.frame = CGRectMake(5.0, -7.0, 100.0, 38.0);
-    [[self view] addSubview:button];
-    button = nil;
-    */
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton addTarget:self
@@ -78,7 +62,6 @@
     [levelBtn setBackgroundColor:[UIColor clearColor]];
     [levelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
     [levelBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
-    //[levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
     [levelBtn setEnabled:NO];
     levelBtn.frame = CGRectMake(260.0, 0.0, 200.0, 38.0);
     [[self view] addSubview:levelBtn];
@@ -109,7 +92,7 @@
     NSString *cryptoNumber;
     NSString *winStr;
     NSString *gameModeStr;
-    //int seconds_elapsed = [defaults integerForKey:cryptoNumber];
+    
     BOOL game_status;
     int game_mode_finished = 0;
     
@@ -134,6 +117,7 @@
                 //Set button image
                 UIImage *btnImage = [UIImage imageNamed:@"key-icon-dull.png"];
                 [btn setBackgroundImage:btnImage forState:UIControlStateNormal];
+                [[btn titleLabel] setText:[NSString stringWithFormat:@"%d", counter]];
                 [btn addTarget:self action:@selector(startGame:)  forControlEvents:UIControlEventTouchUpInside];
             }
             [[self view] addSubview:btn];
@@ -143,6 +127,9 @@
         _x = 25.0;
         _y += 55.0;
     }
+    cryptoNumber = nil;
+    winStr = nil;
+    gameModeStr = nil;
 }
 
 - (void)didReceiveMemoryWarning

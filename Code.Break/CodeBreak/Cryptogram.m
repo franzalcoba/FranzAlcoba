@@ -19,8 +19,6 @@
     
     // load .plist file
     NSDictionary* cryptoDict = [NSDictionary dictionaryWithContentsOfFile:messagePath];
-    fileName = nil;
-    messagePath = nil;
     
     // validation
     NSAssert(cryptoDict, @"level config file not found");
@@ -30,8 +28,11 @@
     [self setAuthor: cryptoDict[@"cryptograms"][index][0]];
     [self setCryptogram: cryptoDict[@"cryptograms"][index][1]];
     
+    fileName = nil;
+    messagePath = nil;
+    
     cryptoDict = nil;
-    [cryptoDict release];
+    [cryptoDict autorelease];
     
     return self;
 }

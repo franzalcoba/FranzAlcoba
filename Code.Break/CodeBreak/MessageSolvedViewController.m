@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"game_bg.jpg"] ];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"message_bg.jpg"] ];
     [[self view] setBackgroundColor:background];
     [background release];
     
@@ -74,7 +74,7 @@
 
 - (void)showMessage
 {
-    Cryptogram *cryptogramPuzzle = [[[Cryptogram alloc] initWithCryptoNumber:messageNumber] autorelease];//[Cryptogram cryptoMessageWithNumber:messageNumber];
+    Cryptogram *cryptogramPuzzle = [[[Cryptogram alloc] initWithCryptoNumber:messageNumber] autorelease];
     [messageQuote setText:[cryptogramPuzzle cryptogram]];
     [messageAuthor setText:[cryptogramPuzzle author]];
     

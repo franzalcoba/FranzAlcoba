@@ -8,12 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import <AVFoundation/AVFoundation.h>
 #import "Cryptogram.h"
 #import "AnswerKey.h"
 #import "KeySelectionButton.h"
 
-@interface GameController : UIViewController <UIScrollViewDelegate, AVAudioPlayerDelegate>
+@interface GameController : UIViewController <UIScrollViewDelegate>
 {
     NSTimer *aTimer;
     int messageNumber;

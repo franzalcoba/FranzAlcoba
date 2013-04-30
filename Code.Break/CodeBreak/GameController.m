@@ -32,8 +32,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        //NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"bgm" ofType:@"mp3"];
-        //audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioPath] error:NULL];
     }
     return self;
 }
@@ -83,14 +81,12 @@
     
     [levelBtn setBackgroundColor:[UIColor clearColor]];
     [levelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
-    //[levelBtn setBackgroundImage:btnImage forState:UIControlStateDisabled];
     [levelBtn setEnabled:NO];
-    //btnImage = nil;
     levelBtn.frame = CGRectMake(100.0, 3.0, 160.0, 30.0);
     [displayCryptogramView addSubview:levelBtn];
 
     //RETRIEVE MESSAGE AND ENCRYPT - CREATE CRYPTOGRAM
-    cryptogramPuzzle = [[Cryptogram alloc] initWithCryptoNumber:messageNumber]; //[Cryptogram cryptoMessageWithNumber:messageNumber];
+    cryptogramPuzzle = [[Cryptogram alloc] initWithCryptoNumber:messageNumber];
     [cryptogramPuzzle setEncryptionKeys];
     
     //SET ANSWER KEY
@@ -121,13 +117,6 @@
     [self displayDecryptionKeys];
     [self displayCryptogram];
     [self displayCharacterSelection];
-    
-    //PLAY BGM
-    /*if([audioPlayer prepareToPlay]){
-        [audioPlayer play];
-        [audioPlayer setNumberOfLoops:-1];
-        [audioPlayer setVolume:.2];
-    }*/
 }
 
 - (void)setMessageNumber:(int) n
@@ -523,7 +512,7 @@
 
 - (void)showWinAnimation
 {
-    UIColor *background = [[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gamebg.jpg"] ] autorelease];
+    UIColor *background = [[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"message_bg.jpg"] ] autorelease];
     backDrop = [[UIImageView alloc] init];
     backDrop.frame = CGRectMake(0, 0, 480, 320);
     backDrop.backgroundColor = background;
@@ -558,13 +547,6 @@
                          [hiddenAuthor setAlpha:1.0];
                      }
                      completion:^(BOOL finished){
-                         /*UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"CONGRATULATIONS!"
-                                                                           message:@"You've decoded the secret message."
-                                                                          delegate:self
-                                                                 cancelButtonTitle:@"OK"
-                                                                 otherButtonTitles:nil];
-                         [message show];
-                         [message release];*/
                          [menuButton removeFromSuperview];
                          [[self view] addSubview:  menuButton];
                          [[self view] bringSubviewToFront:menuButton];
@@ -656,17 +638,6 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     seconds_elapsed = [defaults integerForKey:cryptoNumber];
     game_status = [defaults boolForKey:winStr];
-}
-
--(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
-{
-    //[audioPlayer release];
-}
-
-
--(void)viewDidDisappear:(BOOL)animated{
-    //[audioPlayer stop];
-    //[audioPlayer release];
 }
 
 - (void)viewDidUnload {
