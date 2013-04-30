@@ -29,6 +29,9 @@
 {
     [super viewDidLoad];
     
+    //iPhone4S = retina
+    //don't assume that the resolution will be constantly 320x480
+    
     UIImageView *backGround = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 480, 320)];
     [backGround setImage:[UIImage imageNamed:@"menu_bg.png"]];
     [backGround setAlpha:0.9];
