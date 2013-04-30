@@ -18,8 +18,6 @@
         // Initialization code
         UIImage *btn = [UIImage imageNamed:@"black_button.png"];
         [self setBackgroundImage:btn forState:UIControlStateNormal];
-        
-        [btn release];
         [self setTitle:@"?" forState:UIControlStateNormal];
         answerForKey = [[NSString alloc] init];
         answer = [[NSString alloc] init];

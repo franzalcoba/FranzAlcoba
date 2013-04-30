@@ -32,7 +32,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        //NSString *audioPath = [[NSBundle mainBundle] pathForResource:@"bgm" ofType:@"mp3"];
+        //audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioPath] error:NULL];
     }
     return self;
 }
@@ -120,6 +121,13 @@
     [self displayDecryptionKeys];
     [self displayCryptogram];
     [self displayCharacterSelection];
+    
+    //PLAY BGM
+    /*if([audioPlayer prepareToPlay]){
+        [audioPlayer play];
+        [audioPlayer setNumberOfLoops:-1];
+        [audioPlayer setVolume:.2];
+    }*/
 }
 
 - (void)setMessageNumber:(int) n
@@ -403,6 +411,7 @@
 {
     if(!game_paused)
     {
+        [self playButtonClickedSound];
         //Display the character selection at the bottom of the screen
         selectedAnswerKey = sender;
         [characterSelection setHidden:NO];
@@ -413,6 +422,8 @@
 {
     //key character has been selected
     selectedScrollViewKey = sender;
+    [self playButtonClickedSound];
+    
     if(sender.isEnabled){
         //set color of selected key in right panel to blue after answer selection
         [selectedAnswerKey setBackgroundImage:nil forState:UIControlStateNormal];
@@ -470,6 +481,7 @@
             [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer isCorrect:NO];
             return NO; //No need to check for other answers
         }else{
+            [self playCorrectKeySound];
             [[displayKeys objectForKey:selectedAnswerKey.answerForKey] changeCharacterDisplay:selectedAnswerKey.answer isCorrect:YES];
         }
     }else{
@@ -537,6 +549,7 @@
                           delay:0.0
                         options: UIViewAnimationOptionCurveEaseIn
                      animations:^{
+                         [self playGameCompletedSound];
                          [backDrop setAlpha:1.0];
                          [backDrop addSubview:hiddenMessage];
                          [backDrop addSubview:hiddenAuthor];
@@ -556,6 +569,36 @@
                          [[self view] addSubview:  menuButton];
                          [[self view] bringSubviewToFront:menuButton];
                      }];
+}
+
+-(void)playCorrectKeySound
+{
+    CFBundleRef mainBundle = CFBundleGetMainBundle();
+    CFURLRef soundFileURLRef;
+    soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"right", CFSTR("wav"), NULL);
+    UInt32 soundID;
+    AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
+    AudioServicesPlaySystemSound(soundID);
+}
+
+-(void)playButtonClickedSound
+{
+    CFBundleRef mainBundle = CFBundleGetMainBundle();
+    CFURLRef soundFileURLRef;
+    soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"button-clicked", CFSTR("wav"), NULL);
+    UInt32 soundID;
+    AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
+    AudioServicesPlaySystemSound(soundID);
+}
+
+-(void)playGameCompletedSound
+{
+    CFBundleRef mainBundle = CFBundleGetMainBundle();
+    CFURLRef soundFileURLRef;
+    soundFileURLRef = CFBundleCopyResourceURL(mainBundle, (CFStringRef) @"completed", CFSTR("wav"), NULL);
+    UInt32 soundID;
+    AudioServicesCreateSystemSoundID(soundFileURLRef, &soundID);
+    AudioServicesPlaySystemSound(soundID);
 }
 
 - (void)didReceiveMemoryWarning
@@ -613,6 +656,17 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     seconds_elapsed = [defaults integerForKey:cryptoNumber];
     game_status = [defaults boolForKey:winStr];
+}
+
+-(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    //[audioPlayer release];
+}
+
+
+-(void)viewDidDisappear:(BOOL)animated{
+    //[audioPlayer stop];
+    //[audioPlayer release];
 }
 
 - (void)viewDidUnload {

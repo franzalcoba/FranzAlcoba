@@ -30,13 +30,20 @@
 		105C3A0D172F62BD00A0B18E /* instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A0B172F62BC00A0B18E /* instructions.png */; };
 		105C3A0E172F62BD00A0B18E /* menu-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A0C172F62BD00A0B18E /* menu-bg.png */; };
 		105C3A10172F62DE00A0B18E /* instructions@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A0F172F62DE00A0B18E /* instructions@2x.png */; };
+		105C3A13172F798400A0B18E /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A12172F798400A0B18E /* correct.wav */; };
+		105C3A15172F7A2300A0B18E /* completed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A14172F7A2300A0B18E /* completed.wav */; };
+		105C3A17172F7A7000A0B18E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105C3A16172F7A6F00A0B18E /* AudioToolbox.framework */; };
+		105C3A1B172F8F9100A0B18E /* button-clicked.wav in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A1A172F8F9100A0B18E /* button-clicked.wav */; };
+		105C3A1F172F97D900A0B18E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A1E172F97D800A0B18E /* Default.png */; };
+		105C3A21172FAE7E00A0B18E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105C3A20172FAE7E00A0B18E /* AVFoundation.framework */; };
+		105C3A23172FAEBE00A0B18E /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A22172FAEBD00A0B18E /* bgm.mp3 */; };
+		105C3A25172FB2AA00A0B18E /* right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 105C3A24172FB2AA00A0B18E /* right.wav */; };
 		105F9EB21724C9AE00CCD307 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB11724C9AE00CCD307 /* UIKit.framework */; };
 		105F9EB41724C9AE00CCD307 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB31724C9AE00CCD307 /* Foundation.framework */; };
 		105F9EB61724C9AE00CCD307 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105F9EB51724C9AE00CCD307 /* CoreGraphics.framework */; };
 		105F9EBC1724C9AE00CCD307 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EBA1724C9AE00CCD307 /* InfoPlist.strings */; };
 		105F9EBE1724C9AE00CCD307 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 105F9EBD1724C9AE00CCD307 /* main.m */; };
 		105F9EC21724C9AE00CCD307 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 105F9EC11724C9AE00CCD307 /* AppDelegate.m */; };
-		105F9EC41724C9AE00CCD307 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EC31724C9AE00CCD307 /* Default.png */; };
 		105F9EC61724C9AE00CCD307 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EC51724C9AE00CCD307 /* Default@2x.png */; };
 		105F9EC81724C9AE00CCD307 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F9EC71724C9AE00CCD307 /* Default-568h@2x.png */; };
 		105F9ECF1724CB4600CCD307 /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 105F9ECE1724CB4600CCD307 /* messages.plist */; };
@@ -84,6 +91,14 @@
 		105C3A0B172F62BC00A0B18E /* instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instructions.png; sourceTree = "<group>"; };
 		105C3A0C172F62BD00A0B18E /* menu-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-bg.png"; sourceTree = "<group>"; };
 		105C3A0F172F62DE00A0B18E /* instructions@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instructions@2x.png"; sourceTree = "<group>"; };
+		105C3A12172F798400A0B18E /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
+		105C3A14172F7A2300A0B18E /* completed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = completed.wav; sourceTree = "<group>"; };
+		105C3A16172F7A6F00A0B18E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		105C3A1A172F8F9100A0B18E /* button-clicked.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "button-clicked.wav"; sourceTree = "<group>"; };
+		105C3A1E172F97D800A0B18E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		105C3A20172FAE7E00A0B18E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		105C3A22172FAEBD00A0B18E /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
+		105C3A24172FB2AA00A0B18E /* right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = right.wav; sourceTree = "<group>"; };
 		105F9EAE1724C9AE00CCD307 /* CodeBreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105F9EB11724C9AE00CCD307 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		105F9EB31724C9AE00CCD307 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105C3A21172FAE7E00A0B18E /* AVFoundation.framework in Frameworks */,
+				105C3A17172F7A7000A0B18E /* AudioToolbox.framework in Frameworks */,
 				105F9EB21724C9AE00CCD307 /* UIKit.framework in Frameworks */,
 				105F9EB41724C9AE00CCD307 /* Foundation.framework in Frameworks */,
 				105F9EB61724C9AE00CCD307 /* CoreGraphics.framework in Frameworks */,
@@ -146,9 +163,22 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		105C3A11172F797800A0B18E /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				105C3A24172FB2AA00A0B18E /* right.wav */,
+				105C3A22172FAEBD00A0B18E /* bgm.mp3 */,
+				105C3A12172F798400A0B18E /* correct.wav */,
+				105C3A14172F7A2300A0B18E /* completed.wav */,
+				105C3A1A172F8F9100A0B18E /* button-clicked.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		105F9EA51724C9AE00CCD307 = {
 			isa = PBXGroup;
 			children = (
+				105C3A1E172F97D800A0B18E /* Default.png */,
 				105F9EB71724C9AE00CCD307 /* CodeBreak */,
 				105F9EB01724C9AE00CCD307 /* Frameworks */,
 				105F9EAF1724C9AE00CCD307 /* Products */,
@@ -166,6 +196,8 @@
 		105F9EB01724C9AE00CCD307 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				105C3A20172FAE7E00A0B18E /* AVFoundation.framework */,
+				105C3A16172F7A6F00A0B18E /* AudioToolbox.framework */,
 				105F9EB11724C9AE00CCD307 /* UIKit.framework */,
 				105F9EB31724C9AE00CCD307 /* Foundation.framework */,
 				105F9EB51724C9AE00CCD307 /* CoreGraphics.framework */,
@@ -254,6 +286,7 @@
 		105F9EE21724DA6100CCD307 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				105C3A11172F797800A0B18E /* Sounds */,
 				105C3A0B172F62BC00A0B18E /* instructions.png */,
 				105C3A0F172F62DE00A0B18E /* instructions@2x.png */,
 				105C3A0C172F62BD00A0B18E /* menu-bg.png */,
@@ -329,7 +362,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				105F9EBC1724C9AE00CCD307 /* InfoPlist.strings in Resources */,
-				105F9EC41724C9AE00CCD307 /* Default.png in Resources */,
 				105F9EC61724C9AE00CCD307 /* Default@2x.png in Resources */,
 				105F9EC81724C9AE00CCD307 /* Default-568h@2x.png in Resources */,
 				105F9ECF1724CB4600CCD307 /* messages.plist in Resources */,
@@ -358,6 +390,12 @@
 				105C3A0D172F62BD00A0B18E /* instructions.png in Resources */,
 				105C3A0E172F62BD00A0B18E /* menu-bg.png in Resources */,
 				105C3A10172F62DE00A0B18E /* instructions@2x.png in Resources */,
+				105C3A13172F798400A0B18E /* correct.wav in Resources */,
+				105C3A15172F7A2300A0B18E /* completed.wav in Resources */,
+				105C3A1B172F8F9100A0B18E /* button-clicked.wav in Resources */,
+				105C3A1F172F97D900A0B18E /* Default.png in Resources */,
+				105C3A23172FAEBE00A0B18E /* bgm.mp3 in Resources */,
+				105C3A25172FB2AA00A0B18E /* right.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

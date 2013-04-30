@@ -8,6 +8,7 @@
 
 #import "TitlePageController.h"
 #import "MenuController.h"
+#import "HelpViewController.h"
 
 @interface TitlePageController ()
 
@@ -66,7 +67,9 @@
 
 - (IBAction)enterHowTo:(id)sender
 {
-    
+    HelpViewController *help = [[HelpViewController alloc] init];
+    [[self navigationController] pushViewController:help animated:NO];
+    [help release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation

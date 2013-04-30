@@ -73,7 +73,7 @@
     }else{
         [levelBtn setTitle:@"NORMAL GAME" forState:UIControlStateDisabled];
     }
-    [[levelBtn titleLabel] setFont:[UIFont fontWithName:@"Copperplate-Bold" size:20.f]];
+    [[levelBtn titleLabel] setFont:[UIFont fontWithName:@"Copperplate" size:20.f]];
     
     [levelBtn setBackgroundColor:[UIColor clearColor]];
     [levelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];

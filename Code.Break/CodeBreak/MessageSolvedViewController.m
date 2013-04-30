@@ -79,7 +79,7 @@
     [messageAuthor setText:[cryptogramPuzzle author]];
     
     cryptogramPuzzle = nil;
-    [cryptogramPuzzle release];
+    [cryptogramPuzzle dealloc];
     
     [timeSolved setText:[self formatTimeSolved]];
     

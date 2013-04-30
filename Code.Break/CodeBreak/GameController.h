@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 #import "Cryptogram.h"
 #import "AnswerKey.h"
 #import "KeySelectionButton.h"
 
-@interface GameController : UIViewController <UIScrollViewDelegate>
+@interface GameController : UIViewController <UIScrollViewDelegate, AVAudioPlayerDelegate>
 {
     NSTimer *aTimer;
     int messageNumber;
     int game_mode;
     BOOL game_status;
     BOOL game_paused;
+    //AVAudioPlayer *audioPlayer;
     
     // CRYPTOGRAM CHARACTERS
     // KEY  : letter (NSString)

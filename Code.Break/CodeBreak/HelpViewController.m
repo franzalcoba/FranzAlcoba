@@ -29,6 +29,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (IBAction)backMenu:(UIButton *)sender
+{
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
